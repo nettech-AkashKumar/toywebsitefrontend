@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", serif;
+} 
+
+.review-des{
+  display: flex;
+}
+
+.reviews-container {
+  position: relative;
+  padding: 20px;
+  /* background-color:var(--reviews-card); */
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color);
+ 
+}
+
+
+
+.cardsCont {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.review-title {
+  text-align: center;
+  line-height: 100px;
+  background-color: #f7f3ff;
+  height: 112px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rev-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #7f56d9;
+}
+.rev-titles {
+  font-weight: 400;
+  font-size: 12px;
+  color: #7f56d9;
+}
+.review-des {
+  display: flex;
+}
+.card-sec-title {
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 8px;
+  width: 100%;
+}
+
+.showmorebtn {
+  text-align: right;
+}
+.reviews-container:hover .load-more-btn {
+  opacity: 1;
+  pointer-events: auto;
+}
+.review-page {
+  width: 100%;
+}
+
+
+@media(max-width:1650px){
+  .cardsCont{
+    gap: 3rem 3rem;
+  }
+  /* .product-img-container {
+    width: 140px
+  } */
+  /* .buyagainbtn {
+    width: 33%;
+  } */
+  .overall-rate {
+    gap: 4px;
+}
+}
+
+@media(max-width:1300px){
+  .product-pic {
+    width:85%;
+    flex-wrap:nowrap
+  }
+}
+
+@media(max-width:1200px){
+.product-pic{
+  width: 80%;
+  height: 80%;
+  border-radius: 12px;
+}
+
+}
+
+
+@media(max-width:1030px){
+  
+    .cardsCont {
+      gap: 3rem 1rem;
+  }
+  }
+
+  @media(max-width:975px){
+    .cardsCont {
+    display: flex;
+        flex-direction: column;
+    }
+  }
+  
+
+
+@media (max-width: 768px) {
+  .overall-rate {
+      gap: 4px;
+  }
+
+
+  .cardsCont{
+    display: flex;
+    flex-direction:column;
+  }
+  .section-padding {
+    padding: 0 24px;
+}
+.review-title {
+  text-align: center;
+  line-height: 25px;
+  background-color: #f7f3ff;
+  height: 100px;
+  padding: 23px;
+}
+}
+@media (min-width:320px) and (max-width:1420px){
+  .leftwhishlist-sideb{
+    margin-top: 0 !important;
+  }
+}
+
+@media (min-width: 320px) and (max-width:1600px){
+  .reviews-container{
+    align-items: center !important;
+} 
+}
+
+ 

@@ -1,0 +1,165 @@
+.my-account-container {
+    background: var(--section-color);
+    padding: 20px;
+    border-radius: 12px;
+     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    /* max-width: 400px; */
+    width: 100%;
+  }
+
+
+  .my-account-container {
+    cursor: pointer;
+  height: 750px;
+  overflow-y: scroll;
+}
+.my-account-container::-webkit-scrollbar {
+    display: none !important;
+}
+.my-account-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
+  
+  .account-title {
+    font-size: 20px;
+    
+    margin-bottom: 16px;
+  }
+  
+  .balance-section {
+    background: #047857;
+    
+    color: white;
+    padding: 20px 16px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+  }
+
+  
+[data-theme="dark"] 
+.balance-section{
+      background-color:var(--section-color);
+ 
+    }
+  .balance-section::before{
+    content: "";
+    background-image: url(../../Assets/Image/myaccountimage.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: -1;
+    width: 120px;
+    height: 100%;
+    opacity: 50%;
+    right: 10%;
+  }
+  
+  .balance-text {
+    font-size: 14px;
+  }
+  
+  .balance-amount {
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .eye-icon {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .withdraw-button {
+    width: 100%;
+    background: white;
+    color: #047857;
+    border: 2px solid #047857;
+    padding: 10px;
+    margin-top: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  .withdraw-button:hover{
+    background-color: #0478573a;
+  }
+  
+  .transactions-section {
+    margin-top: 20px;
+  }
+  
+  .transactions-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .transactions-title {
+    font-size: 20px;
+  
+  }
+  
+  .view-all {
+    font-size: 14px;
+    color: #2563eb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .transactions-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .transaction-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .transaction-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+  }
+  
+  .transaction-name {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .transaction-item {
+    font-size: 14px;
+    color: gray;
+  }
+  
+  .transaction-amount-section {
+    text-align: right;
+  }
+  
+  .transaction-amount {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .transaction-time {
+    font-size: 12px;
+    color: gray;
+  }

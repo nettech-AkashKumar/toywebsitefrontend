@@ -1,0 +1,96 @@
+.swipercard {
+  width: 350px;
+  background-color: #fff;
+  border: none;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.swiperimg-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 30px;
+  background-color: #f2eff6;
+  border-radius: 15px;
+  width: 99%;
+  margin-bottom: 20px;
+}
+
+.swipercardimg {
+  width: 100%; /* Adjust as needed for image scaling */
+  aspect-ratio: 2/3;
+  object-fit: contain;
+  border-radius: 20px; /* Optional: Adds rounded corners to the image */
+  padding: 0px;
+  padding: 10px 0px;
+}
+
+.swipercard-heart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: #2c2c2c;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 6px;
+}
+
+.swiper-pagination-bullets {
+  display: flex; 
+  justify-content: center;
+  gap: 10px; 
+}
+
+.swiper-pagination-bullet {
+  width: 30px; 
+  height: 4px; 
+  border-radius: 0; 
+  background-color: #bbb; 
+  transition: background-color 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #793cfa; 
+}
+
+@media (min-width:320px) and (max-width: 480px) {
+  .swipercard {
+    
+  }
+  .swiperimg-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 30px;
+    background-color: #f2eff6;
+    border-radius: 15px;
+    width: 78%;
+    margin-bottom: 20px;
+}
+}
+@media (min-width:320px) and (max-width:768px){
+  .swipercard{
+    width: 100%;
+    /* justify-content: start; */
+    padding: 0;
+  }
+  .swipercard-heart{
+    height: 25px;
+    width: 25px;
+  }
+  .swiper-pagination-bullet{
+    width: 14px;
+  }
+}

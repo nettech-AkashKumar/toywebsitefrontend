@@ -1,0 +1,37 @@
+@media (min-width:320px) and (max-width:768px){
+    .toyscard{
+        /* width: 133px !important; */
+    }
+    .carddescription-toys{
+        /* display: block; */
+    }
+    .toysmapcard{
+        gap: 1rem !important;
+        justify-content: space-evenly !important;
+        display: grid !important;
+        overflow: auto;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding-bottom: 2rem !important;
+    }
+    .toyscardbtn{
+        /* font-size: 10px;
+        padding: 5px 5px; */
+    }
+    .toyscaradsubtitle{
+        font-size: 12px !important;
+    }
+    .toys-filter-bar{
+        overflow: auto;
+    }
+    .toyscard-rating{
+        width: 104px;
+    }
+}
+@media (min-width:769px) and (max-width:1024px){
+    .toysmapcard{
+        display: grid !important;
+        overflow: auto;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding-bottom: 2rem !important;
+    } 
+}

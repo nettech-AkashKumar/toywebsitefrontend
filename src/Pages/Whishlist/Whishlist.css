@@ -1,0 +1,107 @@
+.whislisthero{
+    background: rgb(247,230,249); 
+    background:var(--background);
+    z-index: 0;
+    position: relative;
+}
+.whislisthero::before {
+    content: ""; 
+    position: absolute; 
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 60%;
+    background-image: url(../../Assets/Image/footer-bottom-bg.png);
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    transform: rotate(180deg); 
+ 
+    
+}
+
+[data-theme="dark"] 
+.bg-white{
+      background-color:var(--body_background)!important;
+ 
+    }
+.leftwhishlist-sideb ul li{
+    margin: 13px 0;
+    transition: 0.5s;
+    padding: 3px 10px;
+}
+.leftwhishlist-sideb ul li:hover{
+    color: red;
+    background-color: rgb(207, 206, 206);
+    border-radius: 50px;
+    
+}
+.activewhishlsit{
+    background-color: rgb(209, 206, 206);
+    border-radius: 50px;
+    padding: 4px 8px;
+}
+.righttwhishlist-product-card{
+  width: 1209px;
+}
+@media (min-width:320px) and (max-width:1420px){
+    .whishlit-sidebar-container{
+        display: block !important;
+        background-color: rgb(255 255 255 / 0%) !important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    .leftwhishlist-sideb{
+        background-color: #FFFFFF;
+    }
+    .leftwhishlist-sideb ul{
+        overflow: auto;
+        display: flex;
+        gap: 0px;
+        width: 100%;
+    }
+    .leftwhishlist-sideb ul::-webkit-scrollbar{
+        display: none;
+    }
+    .leftwhishlist-sideb ul{
+        padding: 5px 8px;
+        border-radius: 2px;
+    }
+    .leftwhishlist-sideb ul li{
+        min-width: 163px;
+        margin: 0;
+        /* padding-left: 4px; */
+    }
+    .righttwhishlist-product-card{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .whislisthero::before{
+        content: " ";
+        display: none;
+    }
+    .whislisthero{
+        padding-bottom: 19px !important;
+        background-color: white;
+    }
+    .whishlistheader{
+        margin-top: 0 !important;
+    }
+}
+@media (min-width:320px) and (max-width:768px){
+    .whishlistbtn-buynow{
+        padding: 11px 91px !important;
+    }
+}
+@media (min-width:1421px) and (max-width:1600px){
+    .righttwhishlist-product-card{
+        width: 800px !important;
+    }
+    .whishlistcard{
+        width: 242px;
+    }
+    .whishlistbtn-buynow{
+        padding: 11px 69px !important;
+    }
+  }
+

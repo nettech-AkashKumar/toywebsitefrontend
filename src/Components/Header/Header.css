@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.header {
+    padding: 10px 150px !important;
+}
+.mobile {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Open Sans", serif;
+    font-weight: 400;
+}
+
+
+.navbar-custom {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .navbar-custom .logo {
+    font-weight: bolder !important;
+    color: #000;
+    font-size: 20px !important;
+  }
+  
+  .navbar-custom .nav-link {
+    padding: 0px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    
+
+  }
+  
+  .navbar-custom .navbar-brand {
+    font-size: 24px;
+    font-weight: 500;
+    
+  }
+  
+  .navbar-custom .nav-dropdown-item {
+    padding-left: 10px;
+    padding-right: 10px;
+    
+  }
+  .toydropdown {
+    color: #000 !important;
+    font-weight: 700 !important;
+   
+  }
+  
+  .navbar-custom .btn-signup {
+    font-size: 18px;
+    height: 50px;
+    width: 80px;
+    border-radius: 30px;
+    background-color: #3f5df2;
+    margin-top: 10px;
+    
+  }
+  .navbar-custom .btn-signup:hover {
+    background-color: #007bff;
+    color: white; 
+  }
+
+@media (min-width:320px) and (max-width:480px) {
+  .mobile {
+    display: none;
+  }
+}
+  

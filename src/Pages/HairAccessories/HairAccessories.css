@@ -1,0 +1,10 @@
+@media (min-width:320px) and (max-width:1024px){
+    .hairfiltermap{
+        gap: 1rem !important;
+        justify-content: space-evenly !important;
+        display: grid !important;
+        overflow: auto;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding-bottom: 2rem !important;
+    }
+}

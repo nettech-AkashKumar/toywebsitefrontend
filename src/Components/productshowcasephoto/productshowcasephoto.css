@@ -1,0 +1,86 @@
+.productshowcasephoto {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0px 50px;
+}
+
+.showcase-card {
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  background: #f9f9f9;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.showcase-text {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.showcase-text h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.showcase-text p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.showcase-image {
+  flex: 1;
+}
+
+.showcase-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+}
+
+/* Button Styling */
+.explore-btn {
+  background: linear-gradient(135deg, white, white);
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+}
+
+.explore-btn:hover {
+  background: linear-gradient(135deg, whitesmoke, whitesmoke);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .showcase-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .showcase-image {
+    order: -1;
+  }
+
+  .showcase-text {
+    padding: 20px;
+  }
+}

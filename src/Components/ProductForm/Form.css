@@ -1,0 +1,172 @@
+.container2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 400px;
+  overflow-y: auto;
+}
+.form ::-webkit-scrollbar {
+  display: none;
+}
+.form {
+  scrollbar-width: none;
+}
+
+.rowt {
+  /* display: flex;
+  flex-direction: row !important;
+  justify-content: space-between; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 10px;
+  gap: 20px;
+}
+
+.input-container {
+  flex: 1;
+  padding-right: 10px;
+}
+.input-container:last-child {
+  padding-right: 0;
+}
+
+label {
+  font-size: 16px;
+  color: #1b1b1b;
+  text-align: left;
+  font-weight: 600;
+}
+.productforminput {
+  width: 93%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease-in-out;
+  outline: none;
+}
+
+.productforminput input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.productforminput input[type="file"] {
+  border: none;
+  background: #f9f9f9;
+  padding: 8px;
+  font-weight: 800;
+}
+
+.productformbtn {
+  margin-top: 15px;
+  background: #8247ff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* button:hover {
+  background: #5b28c9;
+} */
+
+.selectorinput {
+  /* outline: none; */
+  color: #959393;
+}
+.disabled-input {
+  background-color: white;
+  color: rgb(161, 57, 57);
+  border: 1px solid rgb(212, 110, 110);
+  cursor: not-allowed;
+}
+
+.enabled-input {
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  cursor: text;
+}
+
+.btn-formclose {
+  background-color: transparent;
+  color: #1b1b1b;
+}
+.btn-formclose:hover {
+  background-color: transparent;
+  color: #1b1b1b;
+}
+.custom-select {
+  color: black;
+  border: 1px solid #ccc;
+}
+
+.custom-select option {
+  /* background-color: red; */
+  color: white;
+}
+
+.selectorinput:hover {
+}
+.selectorinput option {
+}
+
+.option:hover {
+  color: #8247ff !important;
+}
+
+.no-spinner::-webkit-inner-spin-button,
+.no-spinner::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* for modern browser */
+
+/* .no-spinner {
+  appearance: textfield;
+} */
+
+.no-spinner {
+  appearance: none;
+}
+
+/* Target the select element */
+.productforminput.selectorinput.no-spinner {
+  background-color: transparent !important;
+}
+
+option {
+  background-color: white !important;
+  color: black !important;
+}
+
+
+TextField[type=text]:focus {
+  border: 3px solid #555;
+}

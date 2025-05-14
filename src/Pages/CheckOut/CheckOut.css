@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+* {
+  font-family: "Inter", serif;
+  /* background-color: var(--body_background); */
+  /* color: var(--label-color); */
+}
+.CheckOut {
+  padding: 0px;
+  background: var(--background);
+}
+.checkout {
+  z-index: 0;
+  position: relative;
+  height: 90px;
+  background: var(--background);
+}
+.checkout::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 60%;
+  background-image: url(../../Assets/Image/footer-bottom-bg.png);
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  transform: rotate(180deg);
+}
+.checkoutpage {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--section-color);
+  /* padding: 10px 50px; */
+}
+.checkoutheadingdiv {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+.backtocart {
+  display: flex;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 1.22px;
+  color: var(--cart-in-button);
+  width: 25%;
+  margin-left: 67px;
+}
+.checkoutheading {
+  text-align: center;
+  color: #7f56d9;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 28.8px;
+  flex: 0 1;
+}
+.contactcartdiv {
+  padding: 30px 70px;
+}
+.contact {
+  display: flex;
+  gap: 80px;
+  padding-top: 10px;
+}
+.contactcartheading {
+  color: var(--label-color);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+}
+.checkout-group {
+  position: relative;
+}
+.labelname {
+  color: var(--label-color) !important;
+  line-height: 22px !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+}
+.creditcarddiv {
+  width: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: var(--section-color);
+  color: var(--label-color);
+}
+.creditdebit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.creditspan {
+  color: var(--label-color);
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.visaspan {
+  color: var(--label-color);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.paymentcard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+  padding: 20px 0px;
+}
+.paypaldiv,
+.upi,
+.mastercard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px;
+  border: 1px solid #dadada;
+  border-radius: 8px;
+}
+
+.cardname {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: var(--label-color);
+}
+.paysecure {
+  color: var(--label-color);
+  line-height: 19px;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.checkoutbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  width: 100%;
+  background-color: #793cfa;
+  color: #f5f5f5;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 700;
+  border: none;
+}
+.subtotal {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 620px;
+  padding: 0px;
+  padding-top: 50px;
+  gap: 20px;
+  color: var(--label-color);
+}
+
+.subtotal p {
+  color: var(label-color);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+.happingbuying {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--section-color);
+  width: 90%;
+  margin: auto;
+  /* margin-bottom: 50px; */
+  border-radius: 8px;
+}
+
+[data-theme="dark"].happingbuying {
+  margin: 0 !important;
+}
+.bg-body-tertiary {
+  /* background-color:var(--body_background)!important; */
+}
+/* additional css for form */
+.form-payment {
+  width: 50%;
+}
+form,
+.address :nth-child(4),
+form :nth-child(5),
+.address {
+  width: 100%;
+}
+input::placeholder {
+  /* color: #1E1E1E !important; */
+}
+.react-tel-input .form-control:focus {
+  background-color: #ffff;
+  border: 1px solid #8565d1;
+  border-color: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: none;
+  border: 1px solid #8565d1;
+}
+
+.rightcontainer {
+  background-color: var(--section-color);
+}
+
+@media (max-width: 1280px) {
+  .form-payment {
+    width: 100% !important;
+  }
+  .checkoutpage {
+    /* padding: 10px 15px; */
+  }
+  .contactcartdiv {
+    padding: 30px 30px;
+  }
+  .contact {
+    gap: 20px;
+  }
+}
+@media (max-width: 900px) {
+  .checkoutpage {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 10px 0px;
+  }
+  .backtocart {
+    width: 100% !important;
+  }
+  .checkoutheading {
+    display: none;
+  }
+  /* right div */
+  .rightcontainer {
+    width: 100%;
+    /* padding-left:  25px; */
+  }
+  .subtotal {
+    width: 97%;
+    max-width: 990px;
+    padding: 0px 10px;
+  }
+  /* left div */
+  .leftdiv {
+    width: 100%;
+  }
+  .contactcartdiv {
+    padding: 30px 30px;
+    background-color: #f9f9f9;
+    padding-bottom: 100px;
+    margin-left: 25px;
+  }
+  .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+  }
+  .form-payment {
+    width: 100%;
+  }
+  .creditcarddiv {
+    display: none;
+  }
+  .happingbuying {
+    display: none;
+  }
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  .backtocart {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 900px) {
+  .checkout {
+    display: none;
+  }
+  .checkoutheadingdiv {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .backtocart {
+    margin-left: 20px;
+    /* background-color: white; */
+  }
+}
+@media (min-width: 320px) and (max-width: 375px) {
+  .checkoutcart {
+    flex-direction: column;
+  }
+  .cartquantity {
+    justify-content: center;
+  }
+}
+@media (min-width: 901px) and (max-width: 1090px) {
+  .checkoutcart {
+    flex-direction: column;
+  }
+  .cartquantity {
+    justify-content: center;
+  }
+}
+
+.checkoutbttnnms {
+  background-color: "#4ba37d" !important;
+  border: "none";
+  border-radius: 10px;
+  color: "white";
+  padding: "20px 40px";
+  text-align: "center";
+  text-decoration: "none";
+  display: "inline-block";
+  font-size: "16px";
+}
+.checkoutbttnnms:hover {
+  background-color: #7f56d9;
+}

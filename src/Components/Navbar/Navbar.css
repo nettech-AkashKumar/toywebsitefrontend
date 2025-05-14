@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.navbar {
+  padding: 10px 138px !important;
+}
+
+.mobile {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Open Sans", serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #424242;
+  /* padding: 10px 60px; */
+  padding-inline: 40px;
+  padding-top: 10px;
+}
+#navbarSupportedContent, .navbar-brand {
+  font-size: 20px;
+  font-weight: 500;
+}
+/* .web_title{
+  color: var(--text-color);
+ } */
+
+ .dropdown-menu {
+  background-color: var(--section-color);
+  color: var(--text-color);
+ }
+
+ [data-theme="dark"].sc-KXCwU.kDakVx {
+  background-color: var(--background)!important;
+  color: var(--text-color);
+ }
+
+ [data-theme="dark"] 
+.logo{
+     color: #793CFA!important;
+ 
+    }
+
+    .nav-link span {
+      color: var(--text-color);
+    }
+
+    .nav-link{
+     color: var(--text-color);
+    }
+    
+    /* .dropdown-toggle::after {
+      border-right: .3em solid.nav-link!important;
+     border-left: .3em solid var(--text-color);
+    } */
+
+
+.nav-item {
+  margin: 0px 20px;
+}
+a {
+  text-decoration: none !important;
+  
+}
+.dropdown-menu {
+  padding: 18px 40px;
+  width: 276px;
+  margin-top: 20px !important;
+  width: 227px;
+}
+.new {
+  background-color: rgb(236, 253, 243);
+  margin-bottom: 0;
+  font-size: 10px;
+  width: 37px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 22px;
+  padding: 20px;
+}
+.seemore .login-btn{
+  transition: 0.5s;
+}
+.seemore .login-btn:hover{
+  color: black !important;
+}
+.seemore .loginshop{
+  transition: 0.5s;
+}
+.seemore .loginshop:hover{
+  background-color: grey !important;
+  color: white !important;
+}
+
+/* .seemore-btn {
+  border: none;
+  margin-left: 20px;
+  height: 30px;
+  background-color: transparent;
+  color: #8565d1;
+
+  font-size: 14px;
+  text-align: start;
+} */
+.login-btn {
+  border: none;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-family: "Inter", serif;
+}
+
+.nav-link span{
+  font-family: "Inter", serif;
+  transition: 0.5s;
+  position: relative;
+  display: inline-block;
+}
+.nav-link span:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background: rgb(121,60,250);
+background: linear-gradient(9deg, rgba(121,60,250,1) 0%, rgba(211, 210, 210, 0.986) 99%);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.nav-link span:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.topheadernumber{
+  font-family: "Inter", serif;
+}
+.topheadertxt{
+  font-family: "Inter", serif;
+}
+.navbar-brand{
+  font-family: "Inter", serif; 
+}
+
+@media (min-width:768px) and (max-width:1024px) {
+
+  .navbar-nav {
+    gap: 20px;
+  }
+    .seemore {
+      /* display: flex; */
+      /* flex-direction: column; */
+      gap: 0px;
+      margin-left: 32px;
+    }
+    .dropdown-menu {
+      width: 250px !important;
+    }
+} 
+
+
+@media (min-width:320px) and (max-width:768px) {
+  .navbar {
+    padding: 10px !important;
+  }
+  .mobile {
+    display: none;
+  }
+  .navbar-nav {
+    gap: 20px !important;
+  }
+    .seemore {
+      margin-left: 5px !important;
+      padding: 5px 0;
+
+    }
+    .dropdown-menu {
+      width: 250px !important;
+    }
+    .navbar {
+      padding: 10px 10px !important;
+  }
+  .categories-card{
+    width: 129px !important;
+  }
+  .navbar-toggler:focus{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px !important;
+
+  }
+} 
+@media (min-width:768px) and (max-width:1024px){
+  .seemore {
+    margin-left: 5px !important;
+    padding: 5px 0;
+
+  }
+  .navbar-toggler:focus{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px !important;
+  }
+
+}
+@media (min-width:1024px) and (max-width:1440px){
+  .main-nav{
+    justify-content: center !important;
+
+  }
+}
+@media (max-width:1024px){
+  .seemore{
+    flex-direction: row;
+    font-size: 14px;
+    gap: -0.5rem;
+    margin: 0;
+  }
+  .navbar {
+    /* padding: 10px 39px !important; */
+}
+.navbar-nav {
+  gap: 0px;
+}
+.navbar-nav{
+  font-size: 14px;
+}
+.navbar-nav .nav-item .nav-link{
+  margin: 0 !important;
+}
+.main-nav{
+  /* justify-content: center !important; */
+}
+}
+@media (width:1024px){
+  .main-nav{
+  padding: 5px 56px !important;
+  }
+}
+
+
+.boy-category , .girls-category , .kids-category , .shoes-category{
+  display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 10px 19px;
+  }

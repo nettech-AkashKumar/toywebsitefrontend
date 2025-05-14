@@ -1,0 +1,10 @@
+.usersmain{
+    height: calc(100vh - 100px);
+    overflow-y: scroll;
+    
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.usersmain::-webkit-scrollbar{
+    display: none;
+}

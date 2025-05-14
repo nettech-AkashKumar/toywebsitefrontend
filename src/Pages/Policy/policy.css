@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+   font-family: "Inter", serif;
+}
+
+.privacypolicypage {
+   /* background: #f8f2f9; */
+   /* background-color: white; */
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.container-privacy-section {
+   background-color: #ffffff;
+   height: auto;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 2px 4px;
+   width: 100%;
+   justify-content: center;
+}
+
+.sitepolicy{
+   padding: 23px 22px;
+}
+
+.sitepolicy-date{
+   font-weight: 600;
+   line-height: 24px;
+   font-size: 16px;
+   color: #7F56d9;
+}
+.sitepolicy-title{
+   font-weight: 600;
+   font-size: 34px;
+   font-size: clamp(34px,32px,30px);
+   color: #101828;
+}
+.site-policy-main{
+   font-weight: 600;
+   font-size: 20px;
+   line-height: 30px;
+   color: #667085;
+}
+
+
+.policy {
+   text-align: left;
+   padding: 1rem;
+}
+
+.policy-terms-para {
+   color: #667085;
+ font-weight: 400;
+ font-size: 18px;
+ line-height: 28px;
+font-size: clamp(16px, 2vw, 18px);
+}
+
+.policy-ques{
+   font-weight: 600;
+   font-size: 30px;
+   line-height: 38px;
+   color: #101828;
+}
+
+.profile-link{
+   margin: 0;
+    color: #667085;
+    font-size: 17px;
+}
+.privacyhero{
+   background: rgb(247,230,249); 
+    background: linear-gradient(45deg, rgb(219 204 221) 0%, rgba(224, 247, 250, 1) 100%);
+    z-index: 0;
+    position: relative;
+    height: 120px;
+}
+.privacyhero-bg {
+   /* content: "";  */
+   position: absolute; 
+   top: 0;
+   left: 10%;
+   width: 80%;
+   height: 100%;
+   background-image: url(../../Assets/Image/footer-bottom-bg.png);
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   z-index: -1;
+   transform: rotate(180deg); 
+
+   
+}
+
+
+@media (min-width:320px) and (max-width:991px) {
+   .container-privacy-section {
+      width: 100%;
+      padding: 15px;
+   }
+
+   /* img {
+      width: 100%;
+      height: auto;
+   } */
+
+   .policy {
+      padding: 0.5rem;
+   }
+
+   .policy-terms-para {
+      font-size: clamp(14px, 1.8vw, 16px);
+   }
+}
+@media (min-width:320px) and (max-width:991px){
+   .privacyhero{
+      display: none;
+   }
+}

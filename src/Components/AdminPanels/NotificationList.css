@@ -1,0 +1,77 @@
+.notification-panel {
+    display: flex;
+    flex-direction: column;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .category-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .category-tabs button {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    background: #e0e0e0;
+    border-radius: 5px;
+  }
+  
+  .category-tabs button.active {
+    background: #007bff;
+    color: white;
+  }
+  
+  .notification-list {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .notification-item {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .highlight {
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  .load-more {
+    margin-top: 10px;
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .filter-section {
+    margin-top: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .filter-section label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .add-notif {
+    margin-top: 10px;
+    background: green;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }

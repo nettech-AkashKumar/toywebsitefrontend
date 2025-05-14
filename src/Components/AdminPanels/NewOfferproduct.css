@@ -1,0 +1,12 @@
+.offerform input {
+    border: 1px solid grey;
+    padding: 6px 3px;
+    border-radius: 5px;
+    outline: none;
+    
+}
+.offerform button{
+    padding: 6px 3px; 
+}
+
+

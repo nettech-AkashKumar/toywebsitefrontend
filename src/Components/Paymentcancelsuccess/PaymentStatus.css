@@ -1,0 +1,54 @@
+.payment-card {
+  width: 360px;
+  margin: 100px auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  background-color: #00c853;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem auto;
+}
+
+.dollar-sign {
+  font-size: 28px;
+  color: white;
+  font-weight: bold;
+}
+
+.status-heading {
+  font-size: 1.8rem;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.status-message {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.continue-button {
+  background-color: #00c853;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.continue-button:hover {
+  background-color: #00b94e;
+}

@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+* {
+    font-family: "Inter", serif;
+}
+
+.orderhistorypage {
+    width: 100%;
+    padding: 10px 50px;
+}
+.orderhistoryheading {
+    background-color: #F7F3FF;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+justify-content: center
+}
+.sidebarorderdiv {
+    display: flex;
+    background-color: var(--table);
+    color: var(--text-color);
+}
+.orderdetaildiv {
+width: 100%;
+}
+
+.orderdetaildiv table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    
+}
+
+.orderdetaildiv th, .orderdetaildiv td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle;
+    background-color: var(--table);
+}
+
+.orderdetaildiv th {
+    background-color: var(--nav-textcolor);
+    color: #353535;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 500;
+}
+.orderdetaildiv, td {
+    color: var(--order-details);
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 400;
+}
+.orderdetaildiv .sno {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 18px;
+    color: var(--order-details);
+    background-color: var(--table);
+}
+
+.orderdetaildiv td.status-cell {
+    padding: 0; 
+}
+.status-badge {
+    display: inline-block;
+    width: 100%;
+    padding: 6px 0px;
+    text-align: center;
+    box-sizing: border-box;
+}
+  .actionview {
+  color: #3939FF;
+  text-decoration: underline;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.actionstatusprocess {
+    background-color: #EFF8FF;
+    color: #175CD3;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    border-radius: 30px;
+}
+.actionstatusdelivered {
+    background-color: #ECFDF3;
+    color: #027A48;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    border-radius: 30px;
+}
+.actionstatustransit {
+    background-color: #FFFAEB;
+    color: #B54708;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.orderdetaildiv tr:nth-child(odd) {
+    background-color: #fcfcfc;
+}
+
+
+.orderdetaildiv td:last-child {
+    text-align: center;
+}
+
+
+@media(max-width: 1100px) {
+    .orderdetaildiv {
+        padding-inline: 0px;
+        padding-left: 0px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+    .orderdetaildiv table {
+        height: 423px;
+    }
+    .orderdetaildiv th {
+        font-size: 14px;
+        line-height: 14px;
+    }
+}
+@media(max-width: 936px) {
+    .orderdetaildiv {
+        width: 100%;
+        padding-inline: 75px;
+        padding-left: 30px;
+        padding-top: 60px !important;
+    }
+  .orderdetaildiv, td {
+        font-size: 14px;
+        line-height: 14px;
+    }
+    .orderdetaildiv .sno {
+        font-size: 14px;
+        line-height: 14px;
+    }
+    .actionview {   
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 14px;
+      }
+      .orderdetaildiv{
+        width: 100%;
+        padding: 5px;
+        overflow-x: scroll !important;
+    }
+    .orderdetaildiv::-webkit-scrollbar{
+        display:none;
+    }
+    .orderdetaildiv td {
+        min-width: 120px
+    }
+}
+@media(max-width: 770px) {
+    .orderhistorys {
+        display: none;
+    }
+    .orderhistory {
+        background: none;
+        background-color: #f9f9f9 !important;
+    }
+    .orderhistoryheading {
+        height: 100px;
+        width: 90%;
+        margin: 0px 30px;
+        margin-bottom: 40px;
+        border-radius: 15px;
+        background-color: #f7f3ff;
+    }
+    .sidebarorderdiv {
+        display: flex;
+        flex-direction: column;
+    }
+    .orderdetaildiv {
+        width: 100%;
+        background: none;
+        background-color: #f9f9f9 ;
+        padding-inline: 0px;
+        padding-left: 0px;
+        padding-top: 0px !important;
+    }
+}
+
+@media (min-width:320px) and (max-width:1440px){
+    .orderhistory-bx{
+        width: auto !important;
+    }
+}
+
+

@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  scrollbar-color: #793cfa;
+}
+:root{
+  /* --body_background: white; */
+  --background: rgb(247, 230, 249);
+  --background: linear-gradient(
+    90deg,
+    rgba(247, 230, 249, 1) 0%,
+    rgba(224, 247, 250, 1) 100%
+  );
+  --body_background: linear-gradient(
+    90deg,
+    rgba(247, 230, 249, 1) 0%,
+    rgba(224, 247, 250, 1) 100%
+  );
+  --text-color:black;
+  --body_color: black;
+  --orange:#ff9c06;
+  --green:#1a694c;
+  --navy-blue:#0067de;
+  --red:#da3e0e;
+  --svg-color:black;
+  --title-color:#424242;
+  /* --title-color: white; */
+  --grey:#424242;
+  --nav-textcolor:#f3f5fa;
+  /* --card:#F0F5FC; */
+  --card: #FFFFFF4D;
+  --white-smoke:#f3f3f3;
+  --product-card:#ffffff;
+  --card-image: #FAFAFA;
+  --section-color:white;
+  --logo:black;
+  --purple:#6941C6;
+  --account-header:#7F56D9;
+  --modal:white;
+  --modal-text:#4b4b4c;
+  --social-icons:#98A2B3;
+  --background_footer-image:url(/public/footer-bottom-bg.png) ;
+  --background_footer-imagecolor:linear-gradient(
+    90deg,
+    rgba(247, 230, 249, 1) 0%,
+    rgba(224, 247, 250, 1) 100%
+  );
+  --user-data:#121212;
+  --label-color:#7C7B7B;
+  --table:white;
+  --order-details:#353535;
+  --address-card:#EBEAEE;
+  --edit-button:#dcd9d9;
+  --delete-button:#FEF3F2;
+  --shipping-para:#667085;
+  --shipping-des:#353535;
+  --milestone-bar:#344054;
+  --reviews-card:	 #EBEAEE;
+  --logout-modal:#ffffff;
+  --price-detail:#898989;
+  --price-title:#212121;
+  --price-total:#080808;
+  --item-basket:#404040;
+  --basket-items:#1E1E1E;
+  --cart-in-button:#000000;
+  --green: #047857;
+
+
+  
+  
+ 
+}
+
+[data-theme="dark"] {
+  /* background-color: var(--background); */
+  --background: #02091A;
+  --product-card:#F6F6F6;
+    --card-image: #FAFAFA;
+    --section-color:rgba(0, 0, 0, 0.829);
+    --logo:#793CFA ;
+    --modal:black;
+    --modal-text:white;
+    --social-icons:#ffffff;
+    --account-header:#ffffff;
+    
+  --body_background:  #010612;
+  --body_color: white;
+  --text-color:white;
+  --orange:#000000;
+  --green:#000000;
+  --navy-blue:#000000;
+  --red:#000000;
+  --svg-color:white;
+  --title-color:#E3DEDE;
+  --grey:#F0F0F0;
+  --nav-textcolor:#7C9BEA;
+  /* --card:#F9FBFF; */
+  --card: #E0E2E7;
+  --white-smoke:#343030;
+  --purple: #dfd4f7;
+  --background_footer-image:none;
+  --background_footer-imagecolor:black;
+  --user-data:#ffffff;
+  --label-color:#ffffff;
+  --table:black;
+  --order-details:#E3DEDE;
+  --address-card:#343030;
+  --edit-button:#21232c;
+  --delete-button:#282525;
+  --shipping-para:#d4d7de;
+  --shipping-des:#ffffff;
+  --milestone-bar:#d0d6e2;
+  --reviews-card:	 #1a1a1a;
+  --logout-modal:#0d0d0d;
+  --price-detail:#E3DEDE;
+  --price-title:#d4d7de;
+  --item-basket:#ffffff;
+  --price-total:#f2f2f2;
+  --basket-items:#ffffff;
+  --cart-in-button:#793CFA;
+  
+
+ 
+
+
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Volkhov", serif;
+  background: rgb(247, 230, 249);
+  background: linear-gradient(
+    90deg,
+    rgba(247, 230, 249, 1) 0%,
+    rgba(224, 247, 250, 1) 100%
+  );
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+::-webkit-scrollbar {
+  width: 15px; /* Change the width as needed */
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(247, 230, 249); /* Fallback color */
+  background: linear-gradient(
+    90deg,
+    rgba(247, 230, 249, 1) 0%,
+    rgba(224, 247, 250, 1) 100%
+  );
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #793cfa; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Add rounding if you like */
+  border: 3px solid #ffffff; /* Add space around the thumb */
+}

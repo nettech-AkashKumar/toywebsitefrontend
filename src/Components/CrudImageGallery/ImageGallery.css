@@ -1,0 +1,28 @@
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 images per row */
+    gap: 16px; /* Space between images */
+    padding: 16px;
+    max-width: 1200px; /* Limit width */
+    margin: auto;
+  }
+  .imagegallery {
+    position: relative;
+    background: whitesmoke;
+    padding: 25px;
+    border-radius: 5px;
+  }
+  .crossbtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: red;
+  }
+  .gallery-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+    transition: transform 0.3s ease-in-out;
+
+  }

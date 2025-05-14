@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+.main-reviewcard {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    margin: 15px 0;
+}
+.reviewsthree {
+    font-family: "Inter", serif;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 33px;
+    color: #353535;
+    padding: 10px;
+}
+.review-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.cards {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #fff;
+    box-shadow: none;
+}
+
+.card1 {
+    display: flex;
+}
+
+.reviewcardimg {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.reviewname {
+    color: #0C0C0C;
+    line-height: 19px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Inter", serif;
+}
+
+.review-count {
+    font-family: "Inter", serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #667085;
+    line-height: 28px;
+    margin-left: 20px;
+}
+
+.review-description {
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #193238;
+    line-height: 19px;
+    font-weight: 400;
+    font-family: "Inter", serif;
+}
+
+.like {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0C0C0C;
+}
+
+.zero {
+    color: #280F0F;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+    padding: 0px 10px;
+}
+
+.action-section {
+    display: flex;
+    align-items: center;
+}
+
+
+/* for mobile display */
+.recentrated {
+    background-color: #FFFFFF;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #757575;
+    font-weight: 400;
+    font-family: "Inter", serif;
+}
+@media (min-width:320px) and (max-width:768px){
+    .recentrated {
+        font-size: 10px;
+    }
+    .review-count {
+       font-size: 5px;
+       margin-left: 0;
+    }
+    .review-description{
+        word-wrap: break-word;
+    }
+    .addflower{
+        flex-direction: column;
+    }
+}
+@media (width:768px){
+    .addflower{
+        flex-direction: row;
+    }
+}

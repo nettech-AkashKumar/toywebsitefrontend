@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Matemasie&display=swap');
+
+.fun {
+  
+  /* padding: 150px 150px; */
+  z-index: 0;
+
+  /* height: 40px;  */
+  position: relative;
+  background-color: var(--body_background);
+}
+.fun::before {
+  content: ""; 
+  position: absolute; 
+  top: 0;
+  left: 10%;
+  width: 75%;
+  height: 26%;
+  background-image: url(../../Assets/Image/footer-bottom-bg.png);
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  transform: rotate(180deg); 
+  opacity: 80%;
+ 
+ 
+}
+
+[data-theme="dark"] 
+.fun::before {
+      background-image:var(--body_background);
+ 
+    }
+/* .fun::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 60%;
+  background-image: url(../../Assets/Image/footer-bottom-bg.png);
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  transform: rotate(180deg);
+  margin-bottom: 80px;
+} */
+
+.fun-heading {
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 80px;
+  color: var(--grey);
+  padding: 0px;
+  margin: 0px;
+  width: 480px;
+}
+.toy {
+  color: #793cfa;
+  font-size: 80px;
+  font-weight: 900;
+  font-family: "Poppins", serif;
+  position: relative;
+}
+.toy:after {
+  content: url('../../Assets/Image/arrow.png');
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 30px;
+  transform: scale(1.3);
+}
+
+.toy-card {
+  width: 230px;
+  height: 260px;
+  border: none;
+  background-color: var(--card);
+ 
+  padding: 0px 50px;
+  border-radius: 20px;
+}
+.duck-cards {
+  padding-top: 100px;
+}
+.duck-img { 
+  width: 100%;
+  height: 130px;
+  object-fit: contain;
+}
+.cart {
+  margin-bottom: 0px;
+  background-color:#353535;
+  border-radius: 20px;
+  width:50px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   
+}
+ .btn-funn {
+  font-size: 18px;
+  border-radius: 50px;
+  background-color: #6941c6;
+  margin-top: 10px;
+  padding: 10px 26px !important;
+  font-weight: 400;
+  border: none;
+  transition: 0.5s;
+}
+.btn-funn:hover{
+  background-color: grey;
+}
+/* .btn-fun:hover {
+  background-color: #6941c6;
+} */
+
+
+@media (min-width: 320px)  and (max-width: 480px){
+  .fun {
+    padding: 0px;
+  }
+  .fun-heading {
+    font-size: 45px;
+    padding: 0px 30px;
+    width: 430px;
+  }
+  .duck-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+@media (min-width: 768px)  and (max-width: 1024px){
+  .fun {
+    padding: 20px;
+  }
+  .fun-heading {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 50px;
+  }
+  .toy {
+    font-size: 80px;
+  }
+  .toy-card {
+    width: 140px;
+    height: 150px;
+    border: none;
+    background-color: #FFFFFF4D;
+    padding: 0px 50px;
+    border-radius: 20px;
+  }
+  .duck-img { 
+    width: 80px;
+  }
+ .rupees {
+  font-size: 14px !important;
+ }
+ .toy-card {
+  padding: 0px 15px;
+}
+.toy:after {
+  content: url('../../Assets/Image/arrow.png');
+  position: absolute;
+  margin-top: 60px;
+  margin-left: 25px;
+  transform: scale(.8);
+}
+
+
+}
+@media (max-width:1440px){
+  .duck-card{
+
+    gap: 10px;
+  }
+  .toy-card {
+    width: 214px;
+  }
+  .section-padding {
+    padding: 9px 150px;
+}
+}
+
+@media (min-width:768px) and (max-width:1024px){
+  .toy:after{
+    margin-left: -18px;
+    /* line-height: 53px; */
+  }
+  .fun-heading{
+    line-height: 53px;
+  }
+}
+@media (min-width:1025px) and (max-width:1460px){
+  .toy-card {
+    width: 161px;
+}
+}
+

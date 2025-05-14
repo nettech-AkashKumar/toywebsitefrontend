@@ -1,0 +1,389 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+  font-family: "Inter", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.tracking-section-padding {
+  padding-bottom: 20px;
+}
+/* .order-tracking{
+    background-color: #f9f9fe;
+} */
+
+.order-track-title {
+  background-color: #f7f3ff;
+  color: #793cfa;
+  line-height: 14px;
+  font-size: 16px;
+  align-items: center;
+  font-weight: 600;
+  text-align: center;
+  height: 120px;
+  justify-content: center;
+  display: flex;
+}
+.order-track-heading {
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.play_palooza-address {
+  display: flex;
+  flex-direction: column;
+  width: 29%;
+  justify-content: center;
+}
+.callsupport {
+  display: flex;
+  gap: 10px;
+}
+
+.palooza_address_title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 24px;
+  color: var(--text-color);
+}
+.palooza_address_para {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  color: var(--text-color);
+}
+.callsupporticon {
+  height: 50px;
+}
+
+.support_call_time {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.support_details {
+  color: #7e8abc;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.call-supportbtn {
+  color: black;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  gap: 12px;
+  background-color: black;
+  width: 100%;
+  color: white;
+}
+.circleicon {
+  font-size: 29px;
+}
+.contactusbtn {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.delivery-help {
+  padding: 7px 25px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  border-top: 1px solid grey;
+}
+
+.question-icon {
+  font-size: 12px;
+  padding: 6px;
+}
+
+.shippingaddress_title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--order-details);
+}
+
+.shippingaddress-para {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--shipping-para);
+}
+.shippingaddress_des {
+  color: var(--shipping-des);
+}
+.trackorderbtn {
+  color: white;
+  background-color: #793cfa;
+  text-decoration: underline;
+  border-radius: 100px;
+  padding: 7px 19px;
+}
+
+.deliverycontainer {
+  display: flex;
+  justify-content: center;
+}
+.deliveryaddress {
+  display: flex;
+  gap: 30px;
+  margin-top: 95px;
+}
+
+.delivery_current_status {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 13px;
+  /* height: 430px; */
+  background-color: var(--white-smoke);
+}
+.progressbar_mobileview {
+  display: none;
+}
+
+.shippingaddress {
+  display: flex;
+  flex-direction: column;
+}
+.deliverytime {
+  display: flex;
+  flex-direction: column;
+  color: var(--order-details);
+}
+.trackingupdates {
+  display: flex;
+  flex-direction: column;
+}
+
+/* .deliverystatus {
+  display: none;
+} */
+/* .deliverystatus_head {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 22px;
+  color: black;
+  padding: 6px 0px;
+} */
+/* .deliverystatus_text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #667085;
+} */
+
+.play_palooza-map {
+  padding: 23px 8px;
+  width: 750px;
+  overflow: hidden;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.play_palooza-map iframe {
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1500px) {
+  .play_palooza-map iframe {
+    width: 87%;
+  }
+  .play_palooza-address {
+    width: 50%;
+  }
+
+  .delivery-help {
+    justify-content: space-between;
+  }
+  .call-supportbtn {
+    width: 60%;
+  }
+  .support_call_time {
+    margin: 0;
+  }
+}
+@media (max-width: 1300px) {
+  .palooza_address_para {
+    margin: 0;
+  }
+  .support_call_time {
+    margin: 0;
+  }
+  .support_details {
+    margin: 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .play_palooza-address {
+    width: 90%;
+  }
+  .play_palooza-map iframe {
+    height: 90%;
+  }
+
+  .palooza_address_para {
+    font-size: 13px;
+    margin: 0;
+  }
+  .support_call_time {
+    margin: 0;
+  }
+  .support_details {
+    margin: 0;
+  }
+
+  .delivery-help {
+    gap: 12px;
+    justify-content: space-between;
+    padding: 0;
+  }
+}
+@media (max-width: 1080px) {
+  .trackorderbtn {
+    padding: 6px 3px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .play_palooza-address {
+    width: 100%;
+  }
+  .support_details {
+    font-size: 12px;
+    margin: 0;
+  }
+
+  .support_call_time {
+    font-size: 15px;
+  }
+  .palooza_address_para {
+    margin: 0;
+  }
+  .callsupport {
+    gap: 2px;
+  }
+}
+
+@media (max-width: 992px) {
+  .callsupporticon {
+    width: 30px;
+    height: 40px;
+    padding: 2px;
+  }
+  .circleicon {
+    font-size: 20px;
+  }
+  .trackorderbtn {
+    width: 50%;
+  }
+  .support_details {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 950px) {
+  .tracking-section-padding {
+    padding: 0 25px;
+    padding-bottom: 23px;
+  }
+  .play_palooza-address {
+    width: 80%;
+  }
+
+  .palooza_address_para {
+    font-size: 15px;
+  }
+
+  .play_palooza-map {
+    width: 100%;
+  }
+  .call-supportbtn {
+    width: 70%;
+  }
+
+  .support_call_time {
+    margin: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .deliverystatus {
+    display: block;
+  }
+
+  .tracking-section-padding {
+    padding: 24px 24px;
+  }
+
+  .deliveryaddress {
+    display: none;
+  }
+  .trackorderbtn {
+    display: block;
+  }
+  .delivery-help {
+    flex-direction: column-reverse;
+  }
+  /* 
+    hr{
+        display: none;
+        margin: 0;
+    } */
+}
+
+@media (min-width: 320px) and (max-width: 992px) {
+  .delivery-help {
+    background-color: rgba(255, 255, 255, 0) !important;
+  }
+}
+@media (min-width: 320px) and (max-width: 768px) {
+  .delivery_current_status {
+    height: 780px;
+  }
+}
+
+.deliverystatus {
+  background-color: #f5f5f5;
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.deliverystatus_head {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.deliverystatus_text {
+  font-size: 16px;
+  color: #555;
+  margin: 4px 0;
+}
+
+.progressbar {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}

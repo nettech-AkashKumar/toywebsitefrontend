@@ -1,0 +1,65 @@
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+
+.section-padding{
+  padding: 9px 137px;
+  background-color: var(--background);
+}
+.button-hover-color{
+  transition: 0.5s;
+}
+.button-hover-color:hover{
+  background-color: grey;
+  color: white;
+}
+
+@media (min-width:320px) and (max-width:768px){
+  .section-padding {
+    padding: 20px 19px !important;
+}
+}
+
+
+@media  (max-width: 1300px){
+  .section-padding{
+    padding: 20px 100px;
+  }
+}
+
+@media  (max-width: 1000px){
+  .section-padding{
+    padding: 20px 50px;
+  }
+}
+@media  (max-width: 768px){
+  .section-padding{
+    padding: 20px 26px;
+  }
+}
+@media  (max-width: 400px){
+  .section-padding{
+    padding: 20px 20px;
+  }
+}
+@media (min-width:1025px) and (max-width:1460px){
+  .section-padding {
+    /* padding: 9px 84px !important; */
+}
+}
+ 
+@media (min-width:1025px) and (max-width:1159px){
+  .section-padding{
+    padding: 9px 50px !important;
+  }
+}
+@media (min-width:320px) and (max-width:480px){
+  .addcart{
+    display: none;
+  }
+}

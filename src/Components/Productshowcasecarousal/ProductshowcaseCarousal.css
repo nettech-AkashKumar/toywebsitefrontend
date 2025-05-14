@@ -1,0 +1,109 @@
+/* Make the carousel full width */
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+.carouselshowcase {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 700px;
+  overflow: hidden;
+}
+
+.slide-content-cont {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+.slider-content ::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.slide-content-cont .slider-content {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.content {
+  position: absolute;
+  width: 650px;
+  padding: 15px 20px;
+  z-index: 999;
+  color: white;
+  font-size: 24px;
+  border-radius: 5px;
+  text-align: left;
+  bottom: 45%;
+  left: 5%;
+  font-weight: 700;
+  font-style: italic;
+}
+.carousel-desc {
+  font-size: 50px;
+}
+.shop-now-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.shop-now-btn:hover {
+  background-color: whitesmoke;
+}
+
+/* .animated-title {
+  position: relative;
+  font-size: 3vw;
+  color: #252839;
+  -webkit-text-stroke: 0.1vw #383d52;
+  text-transform: uppercase;
+}
+
+.animated-title::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: white;
+  -webkit-text-stroke: 0vw #383d52;
+  /* border-right: 2px solid white; */
+/* overflow: hidden;
+  animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+  0%,
+  10%,
+  100% {
+    width: 0;
+  }
+  70%,
+  90% {
+    width: 100%;
+  }
+} */

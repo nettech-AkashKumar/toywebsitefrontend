@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Matemasie&display=swap');
+.shopagecard{
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 50%;
+    color: #7F3C9E;
+    /* font-family: "Matemasie", serif!important; */
+    font-size: 30px;
+    width: 130px;
+    height: 130px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (min-width:320px) and (max-width:768px){
+    .Shopbyage_card_none :nth-child(3){
+        display: none !important;
+    }
+    .Shopbyage_card_none :nth-child(4){
+        display: none !important;
+    }
+    .Shopbyage_card_none :nth-child(5){
+        display: none !important;
+    }
+}
+@media (max-width:425px){
+    #shopcardnone{
+        display: none;
+        background-color: red;
+       
+    }
+}
+@media (min-width:769px) and (max-width:1024px){
+    .Shopbyage_card_none{
+        justify-content: center !important;
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr); 
+    }
+    .shopagecard {
+        min-width: 130px;
+        min-height: 130px;
+    }
+}

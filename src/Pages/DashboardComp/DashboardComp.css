@@ -1,0 +1,198 @@
+.total-orders-card{
+    
+   background-color: #f3a005;
+   width: 195px;
+   height: 130px;
+   padding: 10px;
+   color: var(--title-color);
+   border-radius: 10px;
+   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+   position: relative;
+   z-index: 0;
+   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+
+   [data-theme="dark"]
+   .total-orders-card{
+        background-color: var(--section-color);  
+   }
+   [data-theme="dark"]
+  .total-sales-card{
+        background-color: var(--section-color);  
+   }
+   [data-theme="dark"]
+   .total-customers-overview-card{
+        background-color: var(--section-color);  
+   }
+   [data-theme="dark"]
+   .items-purchased-card{
+        background-color: var(--section-color);  
+   }
+
+/* [data-theme="dark"] 
+   .total-orders-card::after,
+   .total-sales-card::after,
+   .items-purchased-card::after,
+   .total-customers-overview-card::after{
+display: none;
+   }
+  */
+.total-orders-card::after{
+   content: "";
+   position: absolute;
+   background-image: url(../../Assets//Image/dhashboard-card2.png);
+   background-size: cover;
+   background-position:center;
+   background-repeat: no-repeat;
+   width: 50%;
+   height: 100%;
+   z-index: -1;
+   left: 80px;
+   bottom: -5px;
+   opacity: 46%;
+}
+
+.total-sales-card{
+   background-color: #1bb61b;
+   width: 195px;
+   height: 130px;
+   padding: 10px;
+   color: var(--title-color);
+   border-radius: 10px;  
+   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+   position: relative;
+   z-index: 0;
+   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+
+}
+.total-sales-card::after{
+   content: "";
+   position: absolute;
+   background-image: url(../../Assets/Image/dhashboard-card3.png);
+   background-size: cover;
+   background-position:center;
+   background-repeat: no-repeat;
+   width: 50%;
+   height: 100%;
+   z-index: -1;
+   left: 80px;
+   bottom: -5px;
+   opacity: 46%;
+}
+
+.items-purchased-card{
+   background-color:#8989e3;
+   width: 195px;
+   height: 130px;
+   padding: 10px;
+   color: var(--title-color);
+   border-radius: 10px;
+   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+   position: relative;
+   z-index: 0;
+   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+
+}
+.items-purchased-card::after{
+   content: "";
+   position: absolute;
+   background-image: url(../../Assets//Image/dhashboard-card1.png);
+   background-size: cover;
+   background-position:center;
+   background-repeat: no-repeat;
+   width: 50%;
+   height: 100%;
+   z-index: -1;
+   left: 80px;
+   bottom: -5px;
+   opacity: 46%;
+}
+.total-customers-overview-card{
+   background-color:#e83b3b;
+   width: 195px;
+   height: 130px;
+   padding: 10px;
+   color: var(--title-color);
+   border-radius: 10px;
+   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+   position: relative;
+   z-index: 0;
+   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+.total-customers-overview-card::after{
+   content: "";
+   position: absolute;
+   background-image: url(../../Assets//Image//dhashboard-card4.png);
+   background-size: cover;
+   background-position:center;
+   background-repeat: no-repeat;
+   width: 50%;
+   height: 100%;
+   z-index: -1;
+   left: 80px;
+   bottom: -5px;
+   opacity: 46%;
+}
+.dashboard-main{
+   height: calc(100vh - 100px);
+   overflow-y: scroll;
+   padding: 15px 0;
+  
+}
+.dashboard-main::-webkit-scrollbar{
+   display: none;
+}
+
+/* [data-theme="dark"] .dashboardsales-card {
+   background-color: var(--body_background); 
+ 
+ } */
+ /* .dashboardsales-card{
+   color:var(--text-color)
+ } */
+
+.myaccount{
+   height: calc(100vh - 100px);
+   overflow-y: scroll;
+   /* padding: 15px 0; */
+   padding-top: 15px;
+   padding-bottom: 15px;
+}
+.myaccount::-webkit-scrollbar{
+   display: none;
+}
+[data-theme="dark"] 
+.wheathercomp{
+   background-image: none;
+   color: var(--nav-textcolor);
+   }
+.wheathercomp{
+   background-image: url(../../Assets/Image//wheather-dhashboard-img.jpg);
+  
+
+   background-position: center;
+   background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    padding: 0 ;
+    border: 1px solid var(--white-smoke);
+}
+.dhashboardcontent{
+   height: calc(100vh - 100px);
+   overflow-y: scroll; 
+}
+.dhashboardcontent::-webkit-scrollbar{
+   display: none;
+}
+@media (min-width:320px) and (max-width:768px){
+   .dashbaordsales-card{
+      flex-wrap: wrap;
+      justify-content: center;
+   }
+}
+
+
+
+
+
+

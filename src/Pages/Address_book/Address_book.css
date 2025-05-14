@@ -1,0 +1,37 @@
+.addnewlocation_btn:hover {
+    background-color: #5b28c9;
+  }
+
+@media (min-width:320px) and (max-width:425px){
+    .addressbook_Card{
+        flex-wrap: wrap;
+        gap: 25px !important;
+    }
+    .addnewlocation_btn{
+        padding: 10px 67px !important;
+        background-color: #7F56D9 !important;
+           width: 100%;
+    }
+}
+@media (min-width:425px) and (max-width:768px){
+    .addnewlocation_btn{
+        background-color: #7F56D9 !important;
+        width: 100%;
+    }
+    .addressbook_Card{
+       
+    }
+    
+}
+@media (min-width:425px) and (max-width:500px){
+    .addressbook_Card{
+        flex-wrap: wrap;
+        gap: 25px !important;
+    } 
+}
+@media (min-width:320px) and (max-width:500px){
+    .addressbook_Card{
+        justify-content: center !important;
+    } 
+}
+

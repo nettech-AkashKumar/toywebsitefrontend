@@ -1,0 +1,188 @@
+/* OrdersPage.css
+
+h4.fw-bold {
+    font-size: 1.6rem;
+    color: #333;
+  }
+  
+  .table th,
+  .table td {
+    vertical-align: middle;
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .nav-pills .nav-item .btn {
+    margin-right: 8px;
+  }
+  
+  .modal-title {
+    font-weight: 600;
+  }
+  
+  .pagination .page-links {
+    color: #4a4a4a;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+  }
+  
+  .pagination .page-links:hover {
+    background-color: #eee;
+  }
+  
+  .page-items.active .page-links {
+    background-color: #3f3c94;
+    border-color: #3f3c94;
+    color: white;
+  }
+  
+  .btn-outline-primary {
+    border-color: #3f3c94;
+    color: #3f3c94;
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: #3f3c94;
+    color: white;
+  }
+
+  .page-links .page-items {
+    border: none !important;
+  }
+   */
+
+/* OrdersPage.css */
+
+/* Table Styling */
+* {
+  font-family: sans-serif;
+}
+.table thead th {
+  background-color: white;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+}
+
+.table tbody td {
+  vertical-align: middle;
+  text-align: center;
+  font-size: 15px;
+}
+
+table > :not(caption) > * > * {
+  padding: 0.5rem 0.5rem;
+  color: var(
+    --bs-table-color-state,
+    var(--bs-table-color-type, var(--bs-table-color))
+  );
+  border-bottom-width: var(--bs-border-width);
+  box-shadow: none; /* Removes any background shading */
+  background-color: white !important;
+}
+
+/* .table-hover tbody tr:hover {
+  background-color: #f1f1f1;
+} */
+
+/* .table-primary {
+  background-color: #edeaff !important;
+} */
+
+/* Action Buttons */
+/* .btn {
+  padding: 5px 10px;
+  font-size: 14px;
+} */
+
+/* Pagination Styling */
+.pagination {
+  margin-top: 20px;
+}
+
+.page-item {
+  margin: 0 5px;
+}
+
+.page-links {
+  border: none;
+  color: gray;
+  border-radius: 5px;
+  padding: 6px 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background: transparent;
+}
+
+.page-links:hover {
+  background-color: transparent;
+  color: black;
+}
+
+.page-item.active .page-links {
+  /* background-color: #3f3c94; */
+}
+
+.active .page-links {
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+/* modalStyles.css */
+.modal-content {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  background: #007bff;
+  color: white;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 15px;
+}
+
+.modal-footer {
+  background: #f1f1f1;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+}
+
+.modal-footer button {
+  border-radius: 5px;
+  padding: 8px 12px;
+}
+
+/* @media (min-width: 1200px) {
+  .modal-xl {
+    --bs-modal-width: 1200px;
+  }
+}
+
+@media (min-width: 992px) {
+  .modal-lg,
+  .modal-xl {
+    --bs-modal-width: 800px;
+  }
+}
+.modal-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  width: 85%;
+} */

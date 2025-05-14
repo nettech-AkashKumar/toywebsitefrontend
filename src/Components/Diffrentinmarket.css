@@ -1,0 +1,57 @@
+.different-in-market-section{
+  background-color: var(--section-color);
+    padding-bottom: 70px;
+    padding-top: 70px;
+    color: var(--text-color);
+ }
+ .diffrent-in-matket-card{
+   background-color: #f1f3da;
+ width: 231px;
+ height: 243px;
+ border-radius: 10px;
+ text-align: center;
+ display: flex;
+ flex-direction: column;
+ gap: 58px;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+     
+ }
+ 
+ .differenticoncontainer {
+   width: 7rem;
+   height: 4rem;
+    border-radius: 10rem 10rem 0 0;
+    transform: rotate(-90deg);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -34px;
+ }
+ .diffrentmarketimg{
+     
+ 
+   rotate: 90deg;
+   position: absolute;
+   bottom: -30%;
+ }
+ 
+ @media (min-width: 320px) and (max-width:768px){
+   .diffrent-in-matket-card {
+     width: 132px;
+     height: 200px;
+     
+ }
+ .diffrent-in-matket-card div h4{
+   font-size: 17px;
+ }
+ }
+ 
+ @media (min-width:1024px) and (max-width:1440px){
+   .diffrentmarketcard{
+     flex-wrap: nowrap !important;
+     justify-content: space-between !important;
+   }
+ }

@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+* {
+    font-family: "Inter", serif;
+}
+
+.helpsupport {
+    padding: 0px;
+    background: linear-gradient(
+        45deg,
+        rgba(248, 238, 249, 1) 0%,
+        rgba(226, 247, 250, 1) 100%
+    );
+}
+.helpsupport-bx{
+    /* width: 1209px; */
+}
+
+.helpsupports {
+    z-index: 0;
+    position: relative;
+    height: 90px;
+}
+.helpsupports::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 60%;
+    background-image: url(../../Assets/Image/footer-bottom-bg.png);
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    transform: rotate(180deg);
+}
+.helpsupportpage {
+    width: 100%;
+    padding: 10px 50px;
+}
+.helpprofilediv {
+    background-color: #F7F3FF;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contactformdiv {
+    width: 100%;
+    padding: 50px;
+    padding-inline: 75px;
+    padding-left: 30px;
+}
+.sidebarcontactdiv {
+    display: flex;
+    background-color: #ffff;
+    margin-bottom: 100px;
+}
+.form-inputs {
+    width: 100% !important;
+}
+
+.contactsupportbtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+    border-radius: 100px;
+    width: 100%;
+    background-color: #793CFA;
+    color: #F5F5F5;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 600;
+    border: none;
+}
+@media (max-width: 770px) {
+    .helpsupports {
+        display: none;
+    }
+    .helpsupport {
+        background: none;
+        background-color: #f9f9f9 !important;
+    }
+    .helpprofilediv {
+        height: 100px;
+       width: 90%;
+       margin: 0px 30px;
+       margin-bottom: 40px;
+       border-radius: 15px;
+       background-color: #f7f3ff;
+    }
+    .sidebarcontactdiv {
+        display: flex;
+        flex-direction: column !important;
+        background: none;
+    }
+   
+    .contactformdiv {
+        padding-inline: 0px;
+        padding-left: 5px;
+    }
+}
+@media (min-width:320px) and (max-width:1440px){
+    .helpsupport-bx{
+        width: auto !important;
+    }
+}
