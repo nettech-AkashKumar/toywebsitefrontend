@@ -8,6 +8,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { toast, ToastContainer } from "react-toastify";
+import BASE_URL from "../../config/config";
 
 
 
@@ -18,10 +19,10 @@ const Login = ({ handleShowRegisterModal }) => {
   const navigate = useNavigate();
   const { dispatch: cartDispatch } = CartState();
 
-  const handleLogin = async (e) => {
+  const handleLogin = async (e) => {    
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8081/api/users/login", {
+      const response = await fetch(`${BASE_URL}/api/users/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password })

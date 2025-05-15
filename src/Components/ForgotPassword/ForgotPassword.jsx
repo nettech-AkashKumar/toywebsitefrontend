@@ -2,6 +2,7 @@ import { Button, TextField } from '@mui/material'
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast, ToastContainer } from 'react-toastify'
+import BASE_URL from '../../config/config'
 
 const ForgotPassword = () => {
     const [email, setEmail] = useState("")
@@ -10,7 +11,7 @@ const ForgotPassword = () => {
     const handleForgotPassword = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch("http://localhost:8081/api/users/forgot-password", {
+            const response = await fetch(`${BASE_URL}/api/users/forgot-password`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

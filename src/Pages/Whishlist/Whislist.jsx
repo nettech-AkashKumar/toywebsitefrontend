@@ -27,7 +27,7 @@
 //                                  oldPrice={product.old_price}
 //                                  newPrice={product.new_price}
 //                                  levelRange={product.level_range}
-//                                  imageUrl={`http://localhost:8081${product.image  ? product.image[0]?.url : "https://wallpapers-clan.com/wp-content/uploads/2022/12/funny-spongebob-gif-pfp-1.gif"}`}
+//                                  imageUrl={`${BASE_URL}${product.image  ? product.image[0]?.url : "https://wallpapers-clan.com/wp-content/uploads/2022/12/funny-spongebob-gif-pfp-1.gif"}`}
 //                                 />
 //                             ))
 //                         ) : (
@@ -52,6 +52,7 @@ import Heroallpages2 from '../../Components/Heroallpages2/Heroallpages2';
 import SidebarAllpages from '../../Components/SidebarAllpages/SidebarAllpages';
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
+import BASE_URL from '../../config/config';
 
 const Whislist = () => {
     const wishlist = useSelector((state) => state.wishlist.wishlist, shallowEqual);
@@ -79,7 +80,7 @@ const Whislist = () => {
     useEffect(() => {
         const fetchWishlist = async () => {
             try {
-                const response = await axios.get(`http://localhost:8081/api/wishlist/get`, {
+                const response = await axios.get(`${BASE_URL}/api/wishlist/get`, {
                     params: { userId },
                 });
                 const fetchedData = response.data.data;
@@ -129,7 +130,7 @@ const Whislist = () => {
                                         oldPrice={product.old_price}
                                         newPrice={product.new_price}
                                         levelRange={product.level_range}
-                                        imageUrl={`http://localhost:8081${product.image ? product.image[0]?.url : "https://wallpapers-clan.com/wp-content/uploads/2022/12/funny-spongebob-gif-pfp-1.gif"}`}
+                                        imageUrl={`${BASE_URL}${product.image ? product.image[0]?.url : "https://wallpapers-clan.com/wp-content/uploads/2022/12/funny-spongebob-gif-pfp-1.gif"}`}
                                         removeItemFromState={removeItemFromState}
                                     />
                                     // console.log('wishlisrtid', product._id) 

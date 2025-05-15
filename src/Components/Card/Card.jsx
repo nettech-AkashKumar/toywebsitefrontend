@@ -124,6 +124,7 @@ import { FaHeart } from "react-icons/fa";
 import { jwtDecode } from 'jwt-decode';
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import BASE_URL from "../../config/config";
 
 
 
@@ -278,7 +279,7 @@ export default function Card({ _id, productId, image, title, subtitle, old_price
       return;
     }
     try {
-        const response = await fetch("http://localhost:8081/api/cart/add", {
+        const response = await fetch(`${BASE_URL}/api/cart/add`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -357,7 +358,7 @@ export default function Card({ _id, productId, image, title, subtitle, old_price
   return (
     <div className="" style={{ cursor: 'pointer' }} onClick={goToProduct}>
       <div className="card">
-        <img src={`http://localhost:8081${imageUrl}`} alt="" className="cardimage" />
+        <img src={`${BASE_URL}${imageUrl}`} alt="" className="cardimage" />
         <div className="carddescription">
           <div className="pricing">
             <p className="m-0"><b>{title}</b></p>

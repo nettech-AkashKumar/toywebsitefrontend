@@ -8,6 +8,7 @@ import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { Typography } from "@mui/material";
+import BASE_URL from "../../config/config";
 
 
 const Form = ({
@@ -22,7 +23,7 @@ const Form = ({
     if (window.confirm("Are you sure you want to delete this image?")) {
       try {
         await axios.delete(
-          `http://localhost:8081/delete-image/${productId}/${imageId}`
+          `${BASE_URL}/delete-image/${productId}/${imageId}`
         );
         alert("Image deleted success");
       } catch (error) {
@@ -65,7 +66,7 @@ const Form = ({
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get("http://localhost:8081/api/categories/all");
+      const res = await axios.get(`${BASE_URL}/api/categories/all`);
       setCategories(res.data.categories)
       console.log('resform12345', res.data.categories)
     }catch(error) {
@@ -75,7 +76,7 @@ const Form = ({
 
   const fetchTargets = async () => {
     try {
-      const restarget = await axios.get("http://localhost:8081/api/target/all");
+      const restarget = await axios.get(`${BASE_URL}/api/target/all`);
       setTargets(restarget.data.targets)
       console.log('restarget', restarget.data.targets)
     }catch(error) {

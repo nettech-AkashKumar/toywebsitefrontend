@@ -5,6 +5,7 @@ import '../../Pages/Address_book/Address_book.css'
 import SidebarAllpages from '../../Components/SidebarAllpages/SidebarAllpages';
 import Whishlist_Card from "../../Pages/Whishlist/Whishlist_Card";
 import { useNavigate } from 'react-router-dom';
+import BASE_URL from '../../config/config';
 
 const RecentActivity = () => {
 
@@ -48,7 +49,7 @@ const RecentActivity = () => {
         oldPrice={product.old_price}
         newPrice={product.new_price}
         levelRange={product.level_range}
-        imageUrl={`http://localhost:8081${product.image ? product.image[0]?.url : "https://wallpapers-clan.com/wp-content/uploads/2022/12/funny-spongebob-gif-pfp-1.gif"}`}
+        imageUrl={`${BASE_URL}${product.image ? product.image[0]?.url : "https://wallpapers-clan.com/wp-content/uploads/2022/12/funny-spongebob-gif-pfp-1.gif"}`}
         removeItemFromState={() => removeItemFromState(product._id)}
        />
       ))}

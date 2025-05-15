@@ -8,6 +8,7 @@ import Heroallpages2 from "../../Components/Heroallpages2/Heroallpages2";
 import SidebarAllpages from "../../Components/SidebarAllpages/SidebarAllpages";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
+import BASE_URL from "../../config/config";
 
 const AccountsDetails = () => {
   const initialAccountDetails = {
@@ -31,7 +32,7 @@ const AccountsDetails = () => {
       try {
         const userId = localStorage.getItem("userId");
         const response = await axios.get(
-          `http://localhost:8081/api/users/profile/${userId}`
+          `${BASE_URL}/api/users/profile/${userId}`
         );
         console.log("Fetched user data:", response.data);
         setFormData({
@@ -77,7 +78,7 @@ const AccountsDetails = () => {
       return;
     }
     try {
-      const response = await axios.put(`http://localhost:8081/api/users/profile/${userId}`, {
+      const response = await axios.put(`${BASE_URL}/api/users/profile/${userId}`, {
         name: formData.name,
         email: formData.email,
         password: formData.password,

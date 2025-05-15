@@ -24,6 +24,7 @@ import { loadStripe } from "@stripe/stripe-js"
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 import DeliveryAddress from "../../Components/DeliveryAddress/DeliveryAddress"
+import BASE_URL from "../../config/config";
 
 const CheckOut = () => {
   const [address, setAddresses] = useState([])
@@ -96,7 +97,7 @@ const CheckOut = () => {
       existingCheckoutFromData.push(formData)
       localStorage.setItem("checkoutFormDataArray", JSON.stringify(existingCheckoutFromData))
       //save to backend
-      const response = await fetch('http://localhost:8081/api/checkoutform/post', {
+      const response = await fetch(`${BASE_URL}/api/checkoutform/post`, {
         method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -145,7 +146,7 @@ const CheckOut = () => {
       console.warn('Cart is empty')
     }
 
-    const response = await fetch(`http://localhost:8081/create-checkout-session`, {
+    const response = await fetch(`${BASE_URL}/create-checkout-session`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -180,7 +181,7 @@ const CheckOut = () => {
   const handleGenerateShipping = async () => {
     const normalizedPhone = normalizePhone(formData.phone1.trim())
     try {
-      const res = await axios.get("http://localhost:8081/shipping-details", {
+      const res = await axios.get(`${BASE_URL}/shipping-details`, {
         params: {
           email: formData.email.trim(),
           phone: normalizedPhone,

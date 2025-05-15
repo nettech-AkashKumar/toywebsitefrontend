@@ -8,8 +8,9 @@ import { RiDeleteBinLine } from 'react-icons/ri'
 import logo from '../../Assets/Image/logo.png'
 import { toast, ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
+import BASE_URL from "../../config/config";
 
-axios.defaults.baseURL = "http://localhost:8081";
+axios.defaults.baseURL = `${BASE_URL}`;
 
 const Productpanel = () => {
   const [showForm, setShowForm] = useState(false);
@@ -225,8 +226,8 @@ const Productpanel = () => {
     console.log('deettaaill', detail)
     setFormDataEdit({
       ...detail,
-      // image: detail.image ? detail.image.map(img => `http://localhost:8081/${img}`) : [],
-      image: Array.isArray(detail.image) ? detail.image.map(img => img) : [`http://localhost:8081/${detail.image}`]
+      // image: detail.image ? detail.image.map(img => `${BASE_URL}/${img}`) : [],
+      image: Array.isArray(detail.image) ? detail.image.map(img => img) : [`${BASE_URL}/${detail.image}`]
     });
     setIsEditing(true);
     console.log("detailsaq", detail);
@@ -248,7 +249,7 @@ const Productpanel = () => {
       name: 'Image',
       selector: (row) => (
         <img
-          src={row.image?.[0]?.url ? `http://localhost:8081${row.image[0]?.url}` : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlCeVhPcF0B061dWx6Y2p6ZshztnAoVQI59g&s"}
+          src={row.image?.[0]?.url ? `${BASE_URL}${row.image[0]?.url}` : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlCeVhPcF0B061dWx6Y2p6ZshztnAoVQI59g&s"}
           alt="Product"
           style={{
             height: "80px",

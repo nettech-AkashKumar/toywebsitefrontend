@@ -3,6 +3,7 @@ import './QuantityCart.css'
 // import Flower from '../CheckOut/CheckOutImages/flower.png'
 import { AiOutlineDelete } from 'react-icons/ai'
 import { CartState } from '../../context/Context'
+import BASE_URL from '../../config/config'
 
 const QuantityCart = () => {
     const { state, dispatch } = CartState();
@@ -56,7 +57,7 @@ const QuantityCart = () => {
                                 <span style={{ display: 'flex', backgroundColor: '#ffff', padding: '10px', height: '70px', marginRight: '5px' }}>
                                     <img
                                         className="checkoutcart-image"
-                                        src={Array.isArray(item.image) ? `http://localhost:8081${item.image[0]?.url}` : item.image_url}
+                                        src={Array.isArray(item.image) ? `${BASE_URL}${item.image[0]?.url}` : item.image_url}
                                         alt={item.title}
                                     />
                                 </span>

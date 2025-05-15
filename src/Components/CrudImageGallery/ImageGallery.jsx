@@ -1,5 +1,6 @@
 import React from "react";
 import "./ImageGallery.css"; // Import external CSS
+import BASE_URL from "../../config/config";
 
 const ImageGallery = ({ images = [], handleDeleteImg, id }) => {
 console.log('iimmdf', id)
@@ -9,7 +10,7 @@ console.log('iimmdf', id)
       {Array.isArray(images) && images.map((image, index) => (
         <div className="imagegallery">
           {console.log('imdfg', image)}
-          <img key={image._id} src={`http://localhost:8081${image.url}`} alt={`Image ${index + 1}`} className="gallery-image" />
+          <img key={image._id} src={`${BASE_URL}${image.url}`} alt={`Image ${index + 1}`} className="gallery-image" />
           {console.log('iidde', image._id)}
           <span onClick={() => handleDeleteImg(id, image._id)} className="btn btn-close crossbtn">X</span>
           {console.log('id and imageid', id, image._id)}
@@ -33,7 +34,7 @@ export default ImageGallery;
 //       {previousImages.length > 0 && (
 //         <div className="image-preview-container">
 //           {previousImages.map((img, index) => {
-//             const fullImageUrl = img.startsWith("http") ? img : `http://localhost:8081${img}`;
+//             const fullImageUrl = img.startsWith("http") ? img : `${BASE_URL}${img}`;
 //             return (
 //               <div key={index} className="imagegallery">
 //                 <img

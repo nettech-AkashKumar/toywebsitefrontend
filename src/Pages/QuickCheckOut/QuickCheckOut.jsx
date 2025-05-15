@@ -9,6 +9,7 @@ import { CartState } from '../../context/Context';
 import PhoneInput from 'react-phone-input-2';
 import { jwtDecode } from 'jwt-decode';
 import axios from 'axios';
+import BASE_URL from '../../config/config';
 
 
 
@@ -59,7 +60,7 @@ const QuickCheckOut = () => {
             return;
         }
         try {
-            const response = await axios.post('http://localhost:8081/send-verification', {
+            const response = await axios.post(`${BASE_URL}/send-verification`, {
                 email
             })
             setCodeSent(true)
@@ -199,7 +200,7 @@ const QuickCheckOut = () => {
                                                 <>
                                                     {/* <p style={{  color: 'var(--item-basket)', fontSize: '18px', fontWeight: 400, }}>Item in your basket({state.cart.length || 0})</p> */}
                                                     <div key={item.id} className='d-flex gap-5 basketfirstdiv' style={{ borderBottom: '1px solid #dedede', paddingBottom: '10px' }}>
-                                                        <span className='basketimgspan'><img src={Array.isArray(item.image) ? `http://localhost:8081${item.image[0]?.url}` : item.image_url} alt={item.title} /></span>
+                                                        <span className='basketimgspan'><img src={Array.isArray(item.image) ? `${BASE_URL}${item.image[0]?.url}` : item.image_url} alt={item.title} /></span>
                                                         <span className='basketparaspan'>{item.title}</span>
                                                     </div>
                                                 </>

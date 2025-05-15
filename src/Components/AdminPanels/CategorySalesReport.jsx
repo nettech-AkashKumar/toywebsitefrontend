@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import axios from "axios";
+import BASE_URL from "../../config/config";
 
 const CategorySalesReport = () => {
   // const [salesData, setSalesData] = useState([]);
@@ -9,7 +10,7 @@ const CategorySalesReport = () => {
 
   const fetchSalesData = async () => {
     try {
-      const res = await axios.get("http://localhost:8081/api/transactions/all");
+      const res = await axios.get(`${BASE_URL}/api/transactions/all`);
       const transactions = res.data;
       //aggregate sales data by category
       const aggregatedData = transactions.reduce((acc, transaction) => {

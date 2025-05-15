@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import './PaymentStatus.css';
 import { Link } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
+import BASE_URL from '../../config/config';
 
 const Success = () => {
 
@@ -21,7 +22,7 @@ const Success = () => {
         //token to fetch userid
         
 
-        fetch("http://localhost:8081/api/cart/clear-cart", {
+        fetch(`${BASE_URL}/api/cart/clear-cart`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"

@@ -10,6 +10,7 @@ import { FiEdit } from 'react-icons/fi'
 import { RiDeleteBinLine } from 'react-icons/ri'
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { Link } from "react-router-dom";
+import BASE_URL from "../../config/config";
 
 const Address_book = () => {
   const [addresses, setAddresses] = useState([]);
@@ -35,7 +36,7 @@ const Address_book = () => {
     const fetchAddresses = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8081/address/${userId}`
+          `${BASE_URL}/address/${userId}`
         );
         if(Array.isArray(res.data.data)) {
         setAddresses(res.data.data);
@@ -89,7 +90,7 @@ const Address_book = () => {
 
   const handleDelete = async (addressId) => {
     try {
-      await axios.delete(`http://localhost:8081/address/${addressId}`);
+      await axios.delete(`${BASE_URL}/address/${addressId}`);
       setAddresses((prev) => prev.filter((addres) => addres._id !== addressId));
     } catch (error) {
       console.error("Failed to delete address", error);

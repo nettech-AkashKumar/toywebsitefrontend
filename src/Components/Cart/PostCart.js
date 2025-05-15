@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 
-const CART_URL = "http://localhost:8081/api/cart"
+const CART_URL = `${BASE_URL}/api/cart`
 
 //add product in cart
 const addToCart = async(userId, productId) => {

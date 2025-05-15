@@ -18,7 +18,7 @@
 //   useEffect(() => {
 //     const fetchOffers = async () => {
 //       try {
-//         const res = await fetch("http://localhost:8081/api/offers");
+//         const res = await fetch("${BASE_URL}/api/offers");
 //         const data = await res.json();
 //         setViewData(data);
 //         console.log("Fetched Offers", data);
@@ -50,7 +50,7 @@
 //                     <div
 //                       className="carousal-img"
 //                       style={{
-//                         backgroundImage: `url(http://localhost:8081${item?.image})`,
+//                         backgroundImage: `url(${BASE_URL}${item?.image})`,
 //                         backgroundSize: "cover",
 //                         backgroundRepeat: "no-repeat",
 //                         backgroundPosition: "center",
@@ -77,6 +77,7 @@ import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import axios from "axios";
+import BASE_URL from "../../config/config";
 
 const Carousal = () => {
   const [viewData, setViewData] = useState([]);
@@ -84,7 +85,7 @@ const Carousal = () => {
   useEffect(() => {
     const fetchOffers = async () => {
       try {
-        const res = await fetch("http://localhost:8081/api/offers");
+        const res = await fetch(`${BASE_URL}/api/offers`);
         const data = await res.json();
         setViewData(data);
       } catch (error) {
@@ -118,7 +119,7 @@ const Carousal = () => {
           {viewData.map((item, index) => {
             let imageUrl = item?.image;
             if (!imageUrl.startsWith("http")) {
-              imageUrl = `http://localhost:8081${imageUrl}`;
+              imageUrl = `${BASE_URL}${imageUrl}`;
             }
 
             return (

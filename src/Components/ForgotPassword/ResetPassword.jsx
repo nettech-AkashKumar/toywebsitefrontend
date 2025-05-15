@@ -2,6 +2,7 @@ import { Button, TextField } from '@mui/material';
 import React, { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { toast, ToastContainer } from 'react-toastify';
+import BASE_URL from '../../config/config';
 
 const ResetPassword = () => {
     const { token } = useParams();
@@ -16,7 +17,7 @@ const ResetPassword = () => {
             return;
         }
         try {
-            const response = await fetch(`http://localhost:8081/api/users/reset-password/${token}`, {
+            const response = await fetch(`${BASE_URL}/api/users/reset-password/${token}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

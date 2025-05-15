@@ -123,7 +123,7 @@
 //     const fetchProfile = async () => {
 //       try {
 //         const userId = localStorage.getItem("userId")
-//         const response = await axios.get(`http://localhost:8081/api/users/profile/${userId}`);
+//         const response = await axios.get(`${BASE_URL}/api/users/profile/${userId}`);
 //         console.log("Fetch user data from admin layout:", response.data);
 //         setAdminProfile({
 //           ...adminProfile,
@@ -145,7 +145,7 @@
 //     formData.append("profileImage", file)
 //     const userId = localStorage.getItem("userId")
 //     try {
-//       const response = await axios.put(`http://localhost:8081/api/users/profileImage/${userId}`,
+//       const response = await axios.put(`${BASE_URL}/api/users/profileImage/${userId}`,
 //         formData,
 //         {
 //           headers: {
@@ -367,7 +367,7 @@
 //                 <DarkMode />
 //                 <div className="adminimg" onClick={() => document.getElementById("uploadInput").click()} style={{ cursor: 'pointer' }}>
 //                   <input type="file" id="uploadInput" accept="image/*" style={{ display: 'none' }} onChange={handleImageChange} />
-//                   <img className="img-fluid" style={{ width: '35px', height: '35px', objectFit: 'cover' }} src={adminProfile?.profileImage ? `http://localhost:8081/profileImage/${adminProfile.profileImage}` : "https://i.pinimg.com/originals/78/71/71/78717192789208dfbf61261f4625da35.jpg"} alt="admin" />
+//                   <img className="img-fluid" style={{ width: '35px', height: '35px', objectFit: 'cover' }} src={adminProfile?.profileImage ? `${BASE_URL}/profileImage/${adminProfile.profileImage}` : "https://i.pinimg.com/originals/78/71/71/78717192789208dfbf61261f4625da35.jpg"} alt="admin" />
 //                 </div>
 //                 <label htmlFor="">
 //                   {adminProfile?.name} <RiArrowDropDownLine />
@@ -420,6 +420,7 @@ import axios from "axios";
 import { FiBox } from "react-icons/fi";
 import { BiUserPlus } from "react-icons/bi";
 import { BsBox } from "react-icons/bs";
+import BASE_URL from "../../config/config";
 
 const StyledButton = styled.button`
   width: 100%;
@@ -511,7 +512,7 @@ const AdminLayouts = () => {
       try {
         const userId = localStorage.getItem("userId");
         const response = await axios.get(`
-          http://localhost:8081/api/users/profile/${userId}`
+          ${BASE_URL}/api/users/profile/${userId}`
         );
         console.log("Fetch user data from admin layout:", response.data);
         setAdminProfile({
@@ -535,7 +536,7 @@ const AdminLayouts = () => {
     const userId = localStorage.getItem("userId");
     try {
       const response = await axios.put(`
-        http://localhost:8081/api/users/profileImage/${userId}`,
+        ${BASE_URL}/api/users/profileImage/${userId}`,
         formData,
         {
           headers: {
@@ -784,7 +785,7 @@ const AdminLayouts = () => {
                     }}
                     src={
                       adminProfile?.profileImage
-                        ? `http://localhost:8081/profileImage/${adminProfile.profileImage}`
+                        ? `${BASE_URL}/profileImage/${adminProfile.profileImage}`
                         : "https://i.pinimg.com/originals/78/71/71/78717192789208dfbf61261f4625da35.jpg"
                     }
                     alt="admin"

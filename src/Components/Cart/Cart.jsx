@@ -8,6 +8,7 @@ import { AiFillSafetyCertificate } from "react-icons/ai";
 // import Deliverypincodemodal from "../Deliverypincodemodal/Deliverypincodemodal";
 import QuantitySelector from "../../Components/QuantitySelector/QuantitySelector";
 import axios from "axios";
+import BASE_URL from "../../config/config";
 
 const Cart = () => {
   const { state, dispatch } = CartState();
@@ -109,7 +110,7 @@ const Cart = () => {
                         <img
                           src={
                             Array.isArray(item.image)
-                              ? `http://localhost:8081${item.image[0]?.url}`
+                              ? `${BASE_URL}${item.image[0]?.url}`
                               : item.image_url
                           }
                           alt={item.title}
@@ -154,7 +155,7 @@ const Cart = () => {
                                 });
                                 // Now update the backend
                                 // fetch(
-                                //   `http://localhost:8081/api/cart/update-qty`,
+                                //   `${BASE_URL}/api/cart/update-qty`,
                                 //   {
                                 //     method: "PUT",
                                 //     headers: {
@@ -165,7 +166,7 @@ const Cart = () => {
                                 //     }),
                                 //   }
                                 // )
-                                    axios.put(`http://localhost:8081/api/cart/update-qty`, 
+                                    axios.put(`${BASE_URL}/api/cart/update-qty`, 
                                       {_id: item._id, qty: newQuantity, userId: item.userId })
                                       .then(response => console.log("Qunatity updated", response.data))
                                       .catch(error => console.error("Error updating quantity", error) )

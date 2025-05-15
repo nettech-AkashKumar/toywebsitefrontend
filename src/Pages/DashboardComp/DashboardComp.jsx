@@ -6,6 +6,7 @@ import CategorySalesReport from '../../Components/AdminPanels/CategorySalesRepor
 import MyAccount from '../../Components/AdminPanels/MyAccount';
 import DashboardWidget from '../../Components/AdminPanels/DashboardWidget';
 import { monthNames } from './dateUtils';
+import BASE_URL from '../../config/config';
 
 
 const DashboardComp = () => {
@@ -18,7 +19,7 @@ const DashboardComp = () => {
     const fetchAllOrders = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8081/api/all-orders`
+          `${BASE_URL}/api/all-orders`
         );
         setOrders(response.data);
         console.log("response order from component", response.data);
@@ -46,7 +47,7 @@ const DashboardComp = () => {
   useEffect(() => {
     const getCustomerAvailable = async () => {
       try {
-        const customerresponse = await axios.get(`http://localhost:8081/api/users/all`)
+        const customerresponse = await axios.get(`${BASE_URL}/api/users/all`)
         setCustomers(customerresponse.data);
         console.log('successfully fetch customer', customerresponse.data)
       }
@@ -61,7 +62,7 @@ const DashboardComp = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const productResponse = await axios.get(`http://localhost:8081/`)
+        const productResponse = await axios.get(`${BASE_URL}/`)
         setProducts(productResponse.data.data)
         console.log('fetched products successfully', productResponse.data.data)
       }
@@ -72,17 +73,112 @@ const DashboardComp = () => {
     fetchProducts();
   }, []);
   const currentMonth = new Date().getMonth();
- const analyticsData = [
-  {
-    month: monthNames[currentMonth],
-    day: 1, 
-    TotalOrders: orders.length,
-    TotalSales: sales.length,
-    TotalProducts: products.length,
-    TotalCustomersAvailable: customers.length,
-  },
-];
+//  const analyticsData = [
+//   {
+//     month: monthNames[currentMonth],
+//     day: 1, 
+//     TotalOrders: orders.length,
+//     TotalSales: sales.length,
+//     TotalProducts: products.length,
+//     TotalCustomersAvailable: customers.length,
+//   },
+// ];
 
+const analyticsData = [];
+orders.forEach(order => {
+  const orderDate = new Date(order.createdAt);
+  const orderDay = orderDate.getDate();
+  const orderWeek = Math.ceil(orderDay / 7);
+  const orderMonth = monthNames[orderDate.getMonth()];
+  const orderYear = orderDate.getFullYear();
+  let existingEntry = analyticsData.find(entry => entry.day === orderDay && entry.month === orderMonth  && entry.week === orderWeek && entry.year === orderYear)
+  if(!existingEntry) {
+    existingEntry = {
+      day: orderDay,
+      week: orderWeek,
+      month: orderMonth,
+      year: orderYear,
+      TotalOrders: 0,
+      TotalSales: 0,
+      TotalProducts: 0,
+      TotalCustomersAvailable: 0,
+    };
+    analyticsData.push(existingEntry)
+  }
+  existingEntry.TotalOrders += 1;
+});
+sales.forEach(sale => {
+  const saleDate = new Date(sale.createdAt);
+  const saleDay = saleDate.getDate();
+  const saleWeek =Math.ceil(saleDay / 7);
+  const saleMonth = monthNames[saleDate.getMonth()]
+  const saleYear = saleDate.getFullYear()
+  let existingEntry = analyticsData.find(entry => entry.day === saleDay &&  entry.week === saleWeek &&  entry.month === saleMonth && entry.year === saleYear)
+  if(!existingEntry) {
+    existingEntry = {
+      day: saleDay,
+      week: saleWeek,
+      month: saleMonth,
+      year: saleYear,
+      TotalOrders: 0,
+      TotalSales: 0,
+      TotalProducts: 0,
+      TotalCustomersAvailable: 0,
+    }
+    analyticsData.push(existingEntry)
+  }
+  existingEntry.TotalSales += 1;
+})
+
+products.forEach(product => {
+  const productDate = new Date(product.createdAt);
+  const productDay = productDate.getDate();
+  const productWeek = Math.ceil(productDay / 7);
+  const productMonth = monthNames[productDate.getMonth()]
+  const productYear = productDate.getUTCFullYear();
+
+  let existingEntry = analyticsData.find(entry => entry.day === productDay && entry.week === productWeek &&  entry.month === productMonth &&   entry.year === productYear)
+  if(!existingEntry) {
+    existingEntry = {
+      day: productDay,
+      week: productWeek,
+      month: productMonth,
+      year: productYear,
+      TotalOrders: 0,
+      TotalSales: 0,
+      TotalProducts: 0,
+      TotalCustomersAvailable: 0,
+    }
+    analyticsData.push(existingEntry)
+  }
+  existingEntry.TotalProducts += 1;
+})
+
+customers.forEach(customer => {
+  const customerDate = new Date(customer.createdAt)
+  const customerDay = customerDate.getDate();
+  const customerWeek = Math.ceil(customerDay / 7);
+  const customerMonth = monthNames[customerDate.getMonth()]
+  const customerYear = customerDate.getFullYear();
+
+  let existingEntry = analyticsData.find(entry => entry.day === customerDay && entry.week === customerWeek &&  entry.month === customerMonth && entry.year === customerYear)
+  if(!existingEntry) {
+    existingEntry ={
+       day: customerDay,
+       week: customerWeek,
+      month: customerMonth,
+      year: customerYear,
+      TotalOrders: 0,
+      TotalSales: 0,
+      TotalProducts: 0,
+      TotalCustomersAvailable: 0,
+    }
+    analyticsData.push(existingEntry)
+  }
+  existingEntry.TotalCustomersAvailable += 1;
+})
+
+console.log("Constructed Analytics Data:", analyticsData)
 
   return (
     <div>

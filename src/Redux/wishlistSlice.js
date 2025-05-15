@@ -61,7 +61,7 @@ const wishlistSlice = createSlice({
         return;
       }
       axios
-        .post("http://localhost:8081/api/wishlist/add", {
+        .post(`http://localhost:8081/api/wishlist/add`, {
           userId,
           productId,
         })
@@ -95,7 +95,7 @@ const wishlistSlice = createSlice({
         return;
       }
       axios
-        .delete("http://localhost:8081/api/wishlist/delete-wishlist-item", {
+        .delete(`http://localhost:8081/api/wishlist/delete-wishlist-item`, {
           data: { _id, userId, productId },
         })
         .then((response) => console.log("Item removed:", response.data.data))

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 
 import {LineChart,Line,XAxis,YAxis,Tooltip,Legend,ResponsiveContainer,CartesianGrid} from "recharts";
+import BASE_URL from "../../config/config";
 
 const data = [
   { month: "JAN", users: 3000, sales: 4000 },
@@ -40,7 +41,7 @@ const Analytics = () => {
   useEffect(() => {
     const fetchAnalyticsData = async () => {
       try {
-        const usersRes = await axios.get(`http://localhost:8081/api/users/all`);
+        const usersRes = await axios.get(`${BASE_URL}/api/users/all`);
          const salesRes = await axios.get(`/api/transactions/all`);
 
          const monthlyData = initializeMonthlyData();

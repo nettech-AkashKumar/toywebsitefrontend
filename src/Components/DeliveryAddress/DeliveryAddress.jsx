@@ -4,6 +4,7 @@ import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import BASE_URL from "../../config/config";
 
 const DeliveryAddress = ({ onAddressSelect }) => {
   const [addresses, setAddresses] = useState([]);
@@ -28,7 +29,7 @@ const DeliveryAddress = ({ onAddressSelect }) => {
       if (userId) {
         try {
           const res = await axios.get(
-            `http://localhost:8081/address/${userId}`
+            `${BASE_URL}/address/${userId}`
           );
           if (
             res.data &&

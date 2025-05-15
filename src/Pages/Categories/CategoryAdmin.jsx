@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { MdDelete } from 'react-icons/md'
+import BASE_URL from '../../config/config'
 
 const CategoriesAdd = () => {
     const [category, setCategory] = useState('')
@@ -26,7 +27,7 @@ const CategoriesAdd = () => {
     //get categories
     const fetchCategories = async () => {
         try {
-            const res = await axios.get("http://localhost:8081/api/categories/all");
+            const res = await axios.get(`${BASE_URL}/api/categories/all`);
             setCategories(res.data.categories);
             console.log('resdata', res.data.categories)
         } catch (error) {
@@ -37,7 +38,7 @@ const CategoriesAdd = () => {
     //get target
     const fetchTargets = async () => {
         try {
-            const res = await axios.get("http://localhost:8081/api/target/all");
+            const res = await axios.get(`${BASE_URL}/api/target/all`);
             setTargets(res.data.targets);
             console.log('targetdata', res.data.targets)
         } catch (error) {
@@ -56,13 +57,13 @@ const CategoriesAdd = () => {
         const trimmedTarget = target.trim()
         try {
             if (trimmedCategory) {
-                const resCat = await axios.post('http://localhost:8081/api/categories/add', { name: trimmedCategory })
+                const resCat = await axios.post(`${BASE_URL}/api/categories/add`, { name: trimmedCategory })
                 setCategories(prev => Array.isArray(prev) ? [...prev, resCat.data.category] : [resCat.data.category]);
                 setCategory('')
             }
 
             if (trimmedTarget) {
-                const resTar = await axios.post("http://localhost:8081/api/target/add", { target: trimmedTarget })
+                const resTar = await axios.post(`${BASE_URL}/api/target/add`, { target: trimmedTarget })
                 setTargets(prev => Array.isArray(prev) ? [...prev, resTar.data.target] : [resTar.data.target])
                 setTarget('')
             }
@@ -76,7 +77,7 @@ const CategoriesAdd = () => {
     //delete category
     const handleDeleteCategory = async (id) => {
         try {
-            await axios.delete(`http://localhost:8081/api/categories/${id}`)
+            await axios.delete(`${BASE_URL}/api/categories/${id}`)
             fetchCategories();  //call your fetch function to reload the list
         } catch (error) {
             console.error('Failed to delete category', error)
@@ -86,7 +87,7 @@ const CategoriesAdd = () => {
     //delete target
     const handleDeleteTarget = async (id) => {
         try {
-            await axios.delete(`http://localhost:8081/api/target/${id}`)
+            await axios.delete(`${BASE_URL}/api/target/${id}`)
             fetchTargets();
         } catch (error) {
             console.error('Failed  to delete category', error)

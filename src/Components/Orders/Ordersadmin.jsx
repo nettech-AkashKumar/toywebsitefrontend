@@ -9,6 +9,7 @@ import axios from "axios";
 import "./Ordersadmin.css";
 import { sendTrackingToSheet, generateTrackingId } from "../../generateTrackingIdUtilities/GenerateTrackingId"
 import { FaEdit } from "react-icons/fa";
+import BASE_URL from "../../config/config";
 
 const TabButton = styled.button`
   color: black;
@@ -56,7 +57,7 @@ export default function OrdersPage() {
     const fetchCheckoutData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8081/api/checkoutform/get"
+          `${BASE_URL}/api/checkoutform/get`
         );
         const data = await response.json();
         setCheckoutData(data.checkoutdata);
@@ -76,7 +77,7 @@ export default function OrdersPage() {
     const fetchAllOrders = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8081/api/all-orders`
+          `${BASE_URL}/api/all-orders`
         );
         setOrders(response.data);
         console.log("response order from component", response.data);
@@ -97,7 +98,7 @@ export default function OrdersPage() {
 
   // const handleSaveChanges = async () => {
   //   try {
-  //     const response = await axios.put(`http://localhost:8081/api/update-order/${editOrder._id}`, editOrder)
+  //     const response = await axios.put(`${BASE_URL}/api/update-order/${editOrder._id}`, editOrder)
   //     console.log('response through ordersadmin', response.data)
   //     setOrders((prevOrders) =>
   //       prevOrders.map((order) =>
@@ -117,7 +118,7 @@ export default function OrdersPage() {
       if(editOrder.status === "Dispatch" && trackingId) {
         payload.trackingId = trackingId;
       }
-      const response = await axios.put(`http://localhost:8081/api/update-order/${editOrder._id}`, payload)
+      const response = await axios.put(`${BASE_URL}/api/update-order/${editOrder._id}`, payload)
       console.log('response through ordersadmin', response.data)
       setOrders((prevOrders) =>
         prevOrders.map((order) =>
@@ -397,7 +398,7 @@ export default function OrdersPage() {
                 {viewOrderProducts.map((product, index) => (
                   <div className="col-md-4 mb-4" key={index}>
                     <div className="card ordercard" style={{ height: '200px', width: '200px' }}>
-                      <img src={`http://localhost:8081${product?.image}`} alt={product.title} className="card-img-top" style={{ height: '80px', objectFit: 'contain' }} />
+                      <img src={`${BASE_URL}${product?.image}`} alt={product.title} className="card-img-top" style={{ height: '80px', objectFit: 'contain' }} />
                       <div className="card-body">
                         <div className="card-title" style={{ fontWeight: 'bold' }}>{product.title}</div>
                         <p style={{ marginBottom: '0px' }} className="card-text">Price: ₹{product.new_price}</p>

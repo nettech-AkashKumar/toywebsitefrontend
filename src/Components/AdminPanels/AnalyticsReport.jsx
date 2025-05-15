@@ -80,6 +80,12 @@
 
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from "recharts";
 import { Calendar, BarChart2 } from "lucide-react";
+import DatePicker from "react-datepicker"
+import { useState } from "react";
+import "react-datepicker/dist/react-datepicker.css";
+
+
+
 
 
 
@@ -95,8 +101,135 @@ const getCurrentMonth = () => {
 const COLORS = ["#1bb61b", "#8989e3", "#ff0000", "#f69707"];
 
 const AnalyticsReport = ({ data }) => {
-  const currentMonth = getCurrentMonth();
-  const filteredData = data.filter(item => item.month === currentMonth);
+  console.log("Initial Data Array:", data);
+
+  const [filterType, setFilterType] = useState("custom")
+  const [selectedDate, setSelectedDate] = useState(new Date());
+
+  const selectedDay = selectedDate.getDate();
+  const selectedWeek = Math.ceil(selectedDay / 7)
+  const selectedMonth = monthNames[selectedDate.getMonth()]
+  const selectedYear = selectedDate.getFullYear();
+
+  const today = new Date();
+  const lastWeekDate = new Date(today);
+  lastWeekDate.setDate(today.getDate() - 7);
+
+  const lastMonthDate = new Date(today);
+  lastMonthDate.setMonth(today.getMonth() - 1);
+
+  const lastYearDate = new Date(today)
+  lastYearDate.setFullYear(today.getFullYear() - 1)
+
+  console.log('selected day, week, month, year', selectedDay, selectedWeek, selectedMonth, selectedYear)
+  
+  const filteredData = data.filter((item) => {
+    const itemDate = item.createdAt ? new Date(item.createdAt) : null;
+    if(!itemDate) return false;
+
+    const itemDay = itemDate.getDate();
+    const itemWeek = Math.ceil(itemDay / 7);
+    const itemMonth = monthNames[itemDate.getMonth()]
+    const itemYear = itemDate.getFullYear();
+
+    switch(filterType) {
+      case "lastWeek" :
+        return itemDate >= lastWeekDate && itemDate <= today;
+        case "lastMonth": 
+        return itemDate >= lastMonthDate && itemDate <= today;
+        case "lastYear" : 
+        return itemDate >= lastYearDate && itemDate <= today;
+
+        case "custom": 
+        default:
+          return (
+            itemMonth === selectedMonth && itemYear === selectedYear
+          )
+    }
+  })
+
+  console.log("Filtered Data for", filterType, filteredData)
+
+  const handleFilterChange = (type) => {
+    setFilterType(type);
+  }
+
+  // const filteredData = data.filter(item => item.month === selectedMonth);
+
+  // const filteredData = data.filter(item => {
+  //   let itemMonthName = "";
+
+  //       if (item.createdAt) {
+  //         const itemDate = new Date(item.createdAt);
+  //         if (isNaN(itemDate)) {
+  //           console.warn("Invalid date detected:", item.createdAt);
+  //           return false;
+  //         } 
+  //          itemMonthName = monthNames[itemDate.getMonth()];
+  //       }
+  //          else if(item.month) {
+  //         itemMonthName = item.month;
+  //          } else {
+  //           console.warn("Skipping item due to missing createdAt and month:", item);
+  //           return false;
+  //          }
+  //          return itemMonthName === selectedMonth;
+  // });
+
+//  const filteredData = data.filter(item => {
+//   let itemMonthName = "";
+
+//   if (item.createdAt) {
+//     const itemDate = new Date(item.createdAt);
+
+//     if (isNaN(itemDate)) {
+//       console.warn("Invalid date detected (createdAt):", item.createdAt);
+//       return false;
+//     }
+
+//     itemMonthName = monthNames[itemDate.getMonth()];
+//     console.log(`Item with createdAt: ${item.createdAt} - Extracted Month: ${itemMonthName}`);
+//   } 
+//   else if (item.month) {
+//     itemMonthName = item.month;
+//     console.log(`Item with month: ${item.month} - Processed Month: ${itemMonthName}`);
+//   } 
+//   else {
+//     console.warn("Skipping item due to missing createdAt and month:", item);
+//     return false;
+//   }
+
+//   const isMatch = itemMonthName === selectedMonth;
+//   console.log(`Item month: ${itemMonthName}, Selected month: ${selectedMonth}, Match: ${isMatch}`);
+
+//   return isMatch;
+// });
+
+
+// const filteredData = data.filter((item) => {
+//   return (
+//     item.day === selectedDay,
+//     item.week === selectedWeek,
+//     item.month === selectedMonth,
+//     item.year === selectedYear
+//   )
+// })
+
+console.log("Filtered Data:", filteredData);
+
+
+//  const filteredData = data.filter(item => {
+// try {
+//        const itemDate = new Date(item.createdAt);
+//        const itemMonth = itemDate.getMonth();
+//      return itemMonth === selectedMonth || item.month === selectedMonth;
+//     } catch(error) {
+//       console.error("Error parsing date:", error, item)
+//     }
+//   });
+//   console.log('filtered Data', filteredData)
+  
+
 
   // Aggregate data for the pie chart
   const TotalOrders = filteredData.reduce((sum, item) => sum + item.TotalOrders, 0);
@@ -128,9 +261,13 @@ const AnalyticsReport = ({ data }) => {
           <BarChart2 className="w-5 h-5 text-gray-500 cursor-pointer" />
         </div>
         <div className="flex items-center gap-2">
-          <div className="flex items-center border border-gray-300 rounded px-2 py-1 text-sm cursor-pointer">
-            <Calendar className="w-4 h-4 text-gray-500 mr-1" />
-            <span>{`${currentMonth} 2025`}</span>
+          <div className="flex items-center border border-gray-300 rounded px-2 py-1 text-sm cursor-pointer" style={{display:'flex', gap:'10px'}}>
+            {/* <Calendar className="w-4 h-4 text-gray-500 mr-1" /> */}
+            <button className="border border-gray-300 rounded px-2 py-1 text-sm cursor-pointer" style={{gap:'10px'}} onClick={() => handleFilterChange("lastWeek")}>Last Week</button>
+            <button className="border border-gray-300 rounded px-2 py-1 text-sm cursor-pointer" style={{gap:'10px'}} onClick={() => handleFilterChange("lastMonth")}>Last Month</button>
+            <button className="border border-gray-300 rounded px-2 py-1 text-sm cursor-pointer" style={{gap:'10px'}} onClick={() => handleFilterChange("lastyear")}>Last year</button>
+            <DatePicker selected={selectedDate} onChange={(date) =>{setSelectedDate(date); setFilterType("custom")}} dateFormat="MMM yyyy" showFullMonthYearPicker className="border border-gray-300 rounded px-2 py-1 text-sm cursor-pointer"/>
+            {/* <span>{`${currentMonth} 2025`}</span> */}
           </div>
         </div>
       </div>
@@ -146,6 +283,7 @@ const AnalyticsReport = ({ data }) => {
             outerRadius={100}
             fill="#8884d8"
             label={({ name, value }) => `${name}: ${value}`}
+            // sx={{margin: '20px'}}
           >
             {pieData.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />

@@ -20,6 +20,7 @@ import { useProductContext } from "../../context/Products/Product";
 import { CartState } from "../../context/Context";
 import SizeSelector from "../SizeSelector/SizeSelector";
 import axios from "axios";
+import BASE_URL from "../../config/config";
 
 
 const AddToCart = () => {
@@ -280,7 +281,7 @@ const AddToCart = () => {
                           >
                             <img
                               key={index}
-                              src={`http://localhost:8081${img?.url}`}
+                              src={`${BASE_URL}${img?.url}`}
                               alt={`Thumbnail ${index + 1}`}
                               style={{
                                 width: "100%",
@@ -310,7 +311,7 @@ const AddToCart = () => {
                     <span className="mainimage">
                       {singltonProduct ? (
                         <img
-                        src={`http://localhost:8081${image}`}
+                        src={`${BASE_URL}${image}`}
                           alt="Product Image"
                           style={{ width: "300px", height: "auto" }}
                         />

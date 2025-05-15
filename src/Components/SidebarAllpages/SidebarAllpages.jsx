@@ -5,6 +5,7 @@ import LogoutModal from "../../Components/Logout/LogoutModal";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { logout as reduxLogout } from "../../Redux/AuthSlice"; 
+import BASE_URL from "../../config/config";
 
 const SidebarAllpages = () => {
   const navigate = useNavigate()
@@ -28,7 +29,7 @@ const SidebarAllpages = () => {
   const handleDeleteUser = async (id) => {
     console.log("id from sidebar", id);
     try {
-      await axios.delete(`http://localhost:8081/api/users/${id}`, {
+      await axios.delete(`${BASE_URL}/api/users/${id}`, {
         header: {
           "Content-Type": "application/json",
         },

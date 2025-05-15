@@ -7,6 +7,7 @@ import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import MenuItem from "@mui/material/MenuItem";
 import { toast, ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
+import BASE_URL from '../../config/config';
 
 
 const Register = ({ handleShowModal, handleCloseRegisterModal }) => {
@@ -17,6 +18,9 @@ const Register = ({ handleShowModal, handleCloseRegisterModal }) => {
         password: "",
         role: "user"  // Default role 'user'
     };
+
+
+
 
     const [Data, setData] = useState(registerForm);
     const navigate = useNavigate();
@@ -34,7 +38,7 @@ const Register = ({ handleShowModal, handleCloseRegisterModal }) => {
     //     e.preventDefault();
 
     //     try {
-    //         const response = await fetch('http://localhost:8081/api/users/register', {
+    //         const response = await fetch(`${BASE_URL}/api/users/register`, {
     //             method: 'POST',
     //             headers: { 'Content-Type': 'application/json' },
     //             body: JSON.stringify(Data),
@@ -85,11 +89,11 @@ const Register = ({ handleShowModal, handleCloseRegisterModal }) => {
         const formData = new FormData();
         formData.append("name", Data.name);
         formData.append("email", Data.email)
-        formData.append("password", Data.password)
+        formData.append("password", Data.password)      
         formData.append("role", Data.role)
         if (image) formData.append("profileImage", image)
         try {
-            const response = await fetch("http://localhost:8081/api/users/register", {
+            const response = await fetch(`${BASE_URL}/api/users/register`, {
                 method: "POST",
                 body: formData,
             });
