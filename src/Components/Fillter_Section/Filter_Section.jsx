@@ -5,6 +5,7 @@ import "./Filter_Section.css";
 import CardLoader from "../Loader/CardLoader";
 import Card from "../Card/Card";
 import axios from "axios"
+import BASE_URL from "../../config/config";
 
 const Filter_Section = () => {
   const { getSingleProduct, isSingleLoading, singleProduct } =
@@ -17,7 +18,7 @@ const Filter_Section = () => {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const data = await axios.get("/")
+        const data = await axios.get(`${BASE_URL}`)
         console.log('pdata', data)
         if (data.data.success) {
           setStoredProduct(data.data.data);
