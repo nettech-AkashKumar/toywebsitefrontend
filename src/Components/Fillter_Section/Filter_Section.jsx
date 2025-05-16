@@ -18,7 +18,8 @@ const Filter_Section = () => {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const data = await axios.get(`${BASE_URL}`)
+        const data = await axios.get("/")
+        // const data = await axios.get(`${BASE_URL}`)
         console.log('pdata', data)
         if (data.data.success) {
           setStoredProduct(data.data.data);

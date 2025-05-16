@@ -7,8 +7,7 @@ import Productshowcasephoto from "../../Components/productshowcasephoto/products
 import ProductCarousel from "../../Components/Productshowcasecarousal/Productshowcasecarousal";
 import Multicarousal from "../../Components/Multicarousal/Multicarousal";
 
-const API =
-  "https://gist.githubusercontent.com/abhishekpathaknetario/b986efa9e9f3f8c4d7a91e6c41fa025a/raw/productData.json";
+ const API =  "https://gist.githubusercontent.com/johndeo8989/b986efa9e9f3f8c4d7a91e6c41fa025a/raw/productData.json";
 
 const response = await axios.get(API);
 const products = response.data.record.products;

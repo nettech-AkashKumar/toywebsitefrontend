@@ -126,11 +126,16 @@ const AnalyticsReport = ({ data }) => {
   const filteredData = data.filter((item) => {
     const itemDate = item.createdAt ? new Date(item.createdAt) : null;
     if(!itemDate) return false;
-
+    itemDate.setHours(0,0,0,0); //normalize time to midnight for accurate date comparision
     const itemDay = itemDate.getDate();
     const itemWeek = Math.ceil(itemDay / 7);
     const itemMonth = monthNames[itemDate.getMonth()]
     const itemYear = itemDate.getFullYear();
+
+    today.setHours(0,0,0,0);
+    lastWeekDate.setHours(0,0,0,0);
+    lastMonthDate.setHours(0,0,0,0);
+    lastYearDate.setHours(0,0,0,0);
 
     switch(filterType) {
       case "lastWeek" :
@@ -265,7 +270,7 @@ console.log("Filtered Data:", filteredData);
             {/* <Calendar className="w-4 h-4 text-gray-500 mr-1" /> */}
             <button className="border border-gray-300 rounded px-2 py-1 text-sm cursor-pointer" style={{gap:'10px'}} onClick={() => handleFilterChange("lastWeek")}>Last Week</button>
             <button className="border border-gray-300 rounded px-2 py-1 text-sm cursor-pointer" style={{gap:'10px'}} onClick={() => handleFilterChange("lastMonth")}>Last Month</button>
-            <button className="border border-gray-300 rounded px-2 py-1 text-sm cursor-pointer" style={{gap:'10px'}} onClick={() => handleFilterChange("lastyear")}>Last year</button>
+            <button className="border border-gray-300 rounded px-2 py-1 text-sm cursor-pointer" style={{gap:'10px'}} onClick={() => handleFilterChange("lastYear")}>Last year</button>
             <DatePicker selected={selectedDate} onChange={(date) =>{setSelectedDate(date); setFilterType("custom")}} dateFormat="MMM yyyy" showFullMonthYearPicker className="border border-gray-300 rounded px-2 py-1 text-sm cursor-pointer"/>
             {/* <span>{`${currentMonth} 2025`}</span> */}
           </div>

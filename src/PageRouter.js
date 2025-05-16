@@ -33,10 +33,8 @@ import ProductPage from "./Pages/Productpages/ProductPage";
 import KidsWear from "./Pages/KidsWear/KidsWear";
 import FootWear from "./Pages/FootWear/FootWear";
 import SizeSelector from "./Components/SizeSelector/SizeSelector";
-
 import ProductShowcase from "./Pages/ProductShowcase/ProductShowcase";
 import Productshowcasephoto from "./Components/productshowcasephoto/productshowcasephoto";
-
 import Users from "./Pages/Users/Users";
 import Notifications from "./Pages/Notifications/Notifications";
 
